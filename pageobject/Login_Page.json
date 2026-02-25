@@ -1,0 +1,23 @@
+{
+    "username": {
+      "by": "xpath",
+      "value": "//*[@id='txtUserName3']"
+    },
+    "password": {
+      "by": "xpath",
+      "value": "//*[@id='txtPassword3']"
+    },
+    "language":{
+        "by": "xpath",
+        "value": "//*[@id='ddLanguage']"
+      },
+      "remember":{"by": "xpath",
+        "value": "//*[@id='chkRememberPassword3']"
+      },
+    
+    "login_btn": {
+      "by": "xpath",
+      "value": "//*[@id='btnLogin3']"
+    }
+  }
+  

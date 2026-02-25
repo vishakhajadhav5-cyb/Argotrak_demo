@@ -1,0 +1,18 @@
+{
+    "star_arrow": {
+      "html_file_path": "file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/templates/star_arrow_button.html",
+      "chrome_options": ["--start-maximized", "--disable-dev-shm-usage"],
+      "browser": "chrome",
+      "implicit_wait": 5
+    },
+  
+    "treeview": {
+      "url": "https://ej2.syncfusion.com/demos/treeview/check-box/?utm_source",
+      "excel_path": "C:/Users/vishakhajad/Desktop/ArgoTrak_Project/results/Treeview_Checkbox_Data.xlsx",
+      "chrome_options": ["--start-maximized"],
+      "browser": "chrome",
+      "implicit_wait": 10
+    }
+  }
+  
+

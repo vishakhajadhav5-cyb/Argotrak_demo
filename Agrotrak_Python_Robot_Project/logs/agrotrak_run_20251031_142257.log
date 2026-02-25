@@ -1,0 +1,17 @@
+2025-10-31 14:22:57 | INFO | 🚀 Logger initialized successfully at: C:\Users\vishakhajad\Desktop\ArgoTrak_Project\Agrotrak_Python_Robot_Project\tests/../logs/agrotrak_run_20251031_142257.log
+2025-10-31 14:22:57 | INFO | ===== AgroTrak Automation Suite Started =====
+2025-10-31 14:22:57 | INFO | 🚀 Initializing Config Loader
+2025-10-31 14:22:57 | INFO | ✅ Configurations Loaded Successfully.
+2025-10-31 14:22:57 | INFO | 🌍 AgroTrak URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html
+2025-10-31 14:22:57 | INFO | 👤 AgroTrak Username: admin_argotrak
+2025-10-31 14:22:57 | INFO | 🌍 NewGate URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html
+2025-10-31 14:22:57 | INFO | 📊 Initializing Excel setup...
+2025-10-31 14:22:57 | INFO | 🌍 Running AgroTrak Login on DEV
+2025-10-31 14:23:01 | INFO | ✅ AgroTrak login successful.
+2025-10-31 14:23:01 | INFO | 📋 Executing: Device List Actions
+2025-10-31 14:23:07 | INFO | 📋 Executing: Alerts Tab Actions
+2025-10-31 14:23:27 | INFO | 📋 Executing: Reports Tab Actions
+2025-10-31 14:23:36 | INFO | 📋 Executing: Maintenance Manager
+2025-10-31 14:23:41 | INFO | 📋 Executing: Credentials Manager
+2025-10-31 14:23:44 | ERROR | ❌ Exception caught during execution: Keyword 'credential_keywords.Extract Credentials Data' expected 2 arguments, got 1.
+2025-10-31 14:23:44 | INFO | 🧹 Cleaning up and closing browser.

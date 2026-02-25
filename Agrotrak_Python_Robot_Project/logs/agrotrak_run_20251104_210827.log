@@ -1,0 +1,42 @@
+2025-11-04 21:08:27 | INFO | 🚀 Logger initialized successfully at: C:\Users\vishakhajad\Desktop\ArgoTrak_Project\Agrotrak_Python_Robot_Project\tests/../logs/agrotrak_run_20251104_210827.log
+2025-11-04 21:08:27 | INFO | ===== AgroTrak Automation Suite Started =====
+2025-11-04 21:08:27 | INFO | 🚀 Loading Environment Configurations
+2025-11-04 21:08:27 | INFO | ✅ Configurations Loaded Successfully
+2025-11-04 21:08:27 | INFO | 🌍 AgroTrak URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html
+2025-11-04 21:08:27 | INFO | 👤 AgroTrak Username: admin_argotrak
+2025-11-04 21:08:27 | INFO | 🌍 NewGate URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html
+2025-11-04 21:08:27 | INFO | 📊 Initializing Excel setup
+2025-11-04 21:08:27 | INFO | 🌍 Logging into AgroTrak
+2025-11-04 21:08:45 | INFO | ✅ AgroTrak login successful.
+2025-11-04 21:08:45 | INFO | 📋 Executing: Device List Actions
+2025-11-04 21:08:50 | INFO | 📋 Executing: Alerts Tab Actions
+2025-11-04 21:09:13 | ERROR | ❌ Exception occurred during Call Multiple UI Functions: ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=141.0.7390.123)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6e1e5e8e5+80021]
+	GetHandleVerifier [0x0x7ff6e1e5e940+80112]
+	(No symbol) [0x0x7ff6e1be0425]
+	(No symbol) [0x0x7ff6e1c39dc3]
+	(No symbol) [0x0x7ff6e1c2b7c8]
+	(No symbol) [0x0x7ff6e1c6122a]
+	(No symbol) [0x0x7ff6e1c2b056]
+	(No symbol) [0x0x7ff6e1c61440]
+	(No symbol) [0x0x7ff6e1c8968a]
+	(No symbol) [0x0x7ff6e1c61003]
+	(No symbol) [0x0x7ff6e1c295d1]
+	(No symbol) [0x0x7ff6e1c2a3f3]
+	GetHandleVerifier [0x0x7ff6e211dc7d+2960429]
+	GetHandleVerifier [0x0x7ff6e2117f3a+2936554]
+	GetHandleVerifier [0x0x7ff6e2138977+3070247]
+	GetHandleVerifier [0x0x7ff6e1e783ce+185214]
+	GetHandleVerifier [0x0x7ff6e1e7fe1f+216527]
+	GetHandleVerifier [0x0x7ff6e1e67b24+117460]
+	GetHandleVerifier [0x0x7ff6e1e67cdf+117903]
+	GetHandleVerifier [0x0x7ff6e1e4dbb8+11112]
+	BaseThreadInitThunk [0x0x7ffc30c1259d+29]
+	RtlUserThreadStart [0x0x7ffc32a4af78+40]
+
+2025-11-04 21:09:14 | INFO | 🧹 Completed Call Multiple UI Functions (Cleanup Phase)
+2025-11-04 21:09:14 | ERROR | ❌ Exception caught during Run Multiple Environments: No keyword with name 'Append Error To Excel' found.
+2025-11-04 21:09:14 | INFO | 🧹 Cleaning up and closing browsers
+2025-11-04 21:09:19 | INFO | ===== Suite Execution Ended =====

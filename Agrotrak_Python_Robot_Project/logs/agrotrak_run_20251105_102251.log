@@ -1,0 +1,22 @@
+2025-11-05 10:22:51 | INFO | 🚀 Logger initialized successfully at: C:\Users\vishakhajad\Desktop\ArgoTrak_Project\Agrotrak_Python_Robot_Project\tests/../logs/agrotrak_run_20251105_102251.log
+2025-11-05 10:22:51 | INFO | ===== AgroTrak Automation Suite Started =====
+2025-11-05 10:22:51 | INFO | 🚀 Loading Environment Configurations
+2025-11-05 10:22:51 | INFO | ✅ Configurations Loaded Successfully
+2025-11-05 10:22:51 | INFO | 🌍 AgroTrak URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html
+2025-11-05 10:22:51 | INFO | 👤 AgroTrak Username: admin_argotrak
+2025-11-05 10:22:51 | INFO | 🌍 NewGate URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html
+2025-11-05 10:22:51 | INFO | 📊 Initializing Excel setup
+2025-11-05 10:22:51 | INFO | 🌍 Logging into AgroTrak
+2025-11-05 10:22:56 | INFO | ✅ AgroTrak login successful.
+2025-11-05 10:22:56 | INFO | 📋 Executing: Device List Actions
+2025-11-05 10:23:01 | INFO | 📋 Executing: Alerts Tab Actions
+2025-11-05 10:23:14 | INFO | 📋 Executing: Reports Tab Actions
+2025-11-05 10:23:22 | INFO | 📋 Executing: Maintenance Manager Actions
+2025-11-05 10:23:26 | INFO | 📋 Executing: Credentials Manager Actions
+2025-11-05 10:23:31 | INFO | ✅ All UI actions completed successfully.
+2025-11-05 10:23:31 | INFO | 🧹 Completed Call Multiple UI Functions (Cleanup Phase)
+2025-11-05 10:23:31 | INFO | 🌍 Logging into NewGate
+2025-11-05 10:23:34 | INFO | ✅ NewGate login successful.
+2025-11-05 10:23:34 | INFO | ===== Test Suite Completed Successfully =====
+2025-11-05 10:23:34 | INFO | 🧹 Cleaning up and closing browsers
+2025-11-05 10:23:43 | INFO | ===== Suite Execution Ended =====

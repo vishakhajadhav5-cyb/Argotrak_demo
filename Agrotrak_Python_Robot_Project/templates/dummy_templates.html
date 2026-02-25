@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ArgoTrak Dashboard</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f7f8fa;
+}
+
+/* Navbar Base */
+.navbar {
+  background-color: #004a7c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar Sections */
+.navbar-left h2 { margin: 0; font-size: 20px; }
+.navbar-center { display: flex; gap: 12px; }
+.navbar-right { display: flex; align-items: center; gap: 20px; }
+
+/* Navbar buttons */
+.navbar-center button {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.navbar-center button:hover { background: #0096c7; }
+
+/* Profile & Settings Icons */
+.nav-icon { position: relative; }
+.nav-icon img {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: white; padding: 5px;
+  cursor: pointer; transition: transform 0.2s;
+}
+.nav-icon img:hover { transform: scale(1.1); }
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px; /* below icon */
+  right: 0;
+  width: 200px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s;
+}
+.dropdown-menu a:hover { background-color: #f1f1f1; }
+
+/* Tabs */
+.tabcontent { display: none; padding: 20px; }
+.active { display: block; }
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  margin-top: 15px;
+}
+th, td { border: 1px solid #ddd; text-align: left; padding: 8px; }
+th { background-color: #4CAF50; color: white; }
+tr:nth-child(even) { background-color: #f2f2f2; }
+
+/* Buttons */
+button.download, .btn {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button.download:hover, .btn:hover { background-color: #2980b9; }
+button.forward {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button.forward:hover { background-color: #388e3c; }
+
+/* Search */
+.search-container { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.search-container input { width: 70%; padding: 6px; }
+.search-container button { padding: 6px 12px; background-color: #1abc9c; color: white; border: none; cursor: pointer; }
+.search-container button:hover { background-color: #16a085; }
+
+/* Popup modal */
+.popup {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 35%;
+  background-color: white;
+  border: 2px solid #333;
+  padding: 20px;
+  z-index: 1000;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 8px;
+}
+.popup h3 { margin-top: 0; }
+.popup button { margin-top: 10px; }
+
+/* Tree Checkboxes */
+ul.tree, ul.tree ul { list-style-type: none; }
+ul.tree input[type="checkbox"] { margin-right: 6px; }
+ul.tree ul { margin-left: 20px; border-left: 1px dotted #ccc; padding-left: 10px; }
+
+/* Report styling */
+.report-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.report-card h4 { margin: 0 0 5px 0; }
+.report-card p { margin: 4px 0; color: #555; }
+
+
+
+
+/* ===============================
+   RESPONSIVE LAYOUT ADJUSTMENTS
+   =============================== */
+
+/* Make navbar stack vertically on small screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar-center {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar-center button {
+    flex: 1 1 45%;
+    margin: 5px 0;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+/* Make tables scrollable horizontally on smaller screens */
+@media (max-width: 900px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  th, td {
+    font-size: 13px;
+    padding: 6px;
+  }
+}
+
+/* Popup responsive width */
+@media (max-width: 600px) {
+  .popup {
+    width: 90%;
+    left: 5%;
+    top: 10%;
+    padding: 15px;
+  }
+}
+
+/* Credentials section (side-by-side to stacked on mobile) */
+@media (max-width: 800px) {
+  #credentials > div {
+    flex-direction: column;
+  }
+}
+
+/* Tools & Settings split layout */
+@media (max-width: 768px) {
+  #toolsSettingsTab > div {
+    flex-direction: column;
+  }
+  #toolsSettingsTab div[style*="width:200px"] {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+}
+
+/* === FIX: Responsive popup (User Selector, Scheduler) === */
+.popup {
+  max-height: 90vh;          /* Prevent overflow beyond screen */
+  overflow-y: auto;          /* Scroll when content is long */
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  max-width: 95%;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  padding: 20px;
+  z-index: 1000;
+}
+
+/* Make popup header stick so Close button stays visible */
+.popup h3 {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding-bottom: 5px;
+  margin-top: 0;
+  z-index: 10;
+}
+
+/* Adjust popup inputs and labels for smaller devices */
+.popup input[type="text"], .popup select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive behavior for small screens */
+@media (max-width: 600px) {
+  .popup {
+    width: 90%;
+    padding: 15px;
+  }
+  .popup table, .popup td {
+    display: block;
+    width: 100%;
+  }
+  .popup td {
+    margin-bottom: 8px;
+  }
+  .popup input {
+    font-size: 14px;
+  }
+}
+
+
+
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav class="navbar">
+  <div class="navbar-left"><h2>ArgoTrak Dashboard</h2></div>
+  <div class="navbar-center">
+    <button onclick="openTab('devices')">Main Device List</button>
+    <button onclick="openTab('alerts')">Alerts</button>
+    <button onclick="openTab('reports')">Reports</button>
+    <button onclick="openTab('maintenance')">Maintenance</button>
+    <button onclick="openTab('credentials')">Credentials</button>
+  </div>
+  <div class="navbar-right">
+    <div class="nav-icon profile-icon" title="User Profile">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile">
+    </div>
+    <div class="nav-icon settings-icon" title="Settings">
+      <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" alt="Settings" onclick="toggleSettingsMenu()">
+      <div id="settingsDropdown" class="dropdown-menu">
+        <a href="#" onclick="openToolsSettings(event)">🛠️ Tools & Settings</a>
+        <a href="#">📋 Management</a>
+        <a href="#">⚙️ System Configuration</a>
+        <a href="#">❓ Help</a>
+        <a href="#">🚪 Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN DEVICE LIST -->
+<div id="devices" class="tabcontent active">
+  <h2>Main Device List</h2>
+  <button class="download" onclick="downloadExcel()">⬇ Download Excel</button>
+  <table id="deviceTable">
+    <thead>
+      <tr>
+        <th>Status</th><th>Last Message Date</th><th>Client Name</th><th>Device Name</th>
+        <th>IMEI</th><th>SMS Number</th><th>Last Reported Date</th><th>Modified By</th>
+        <th>Modified</th><th>VIN</th><th>Group Name</th><th>Created Date</th>
+        <th>Hardware Name</th><th>IP Address</th>
+      </tr>
+    </thead>
+    <tbody id="deviceBody"></tbody>
+  </table>
+</div>
+
+<!-- ALERTS TAB -->
+<div id="alerts" class="tabcontent">
+  <h2>Alerts</h2>
+  <div class="search-container">
+    <input type="text" placeholder="Search by Group Name..." id="alertSearch">
+    <button onclick="addFilter()">Add Filter</button>
+  </div>
+  <table id="alertTable">
+    <thead>
+      <tr>
+        <th></th><th></th><th>Group Name</th><th>Alert Name</th>
+        <th>ABCD</th><th>ABCD</th>
+        <th>ABCD</th><th>ABCD</th><th>ABCD</th>
+        <th>Delivery Action</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>⭐</td>
+        <td><button class="forward" onclick="openUserSelector('High Bilge Alert')">→</button></td>
+        <td>Charter Boats</td><td>High Bilge Alert</td><td>5</td><td>10</td><td>Mon-Fri</td>
+        <td>08:00 AM</td><td>06:00 PM</td><td>Email</td><td>Administrator</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button class="forward" onclick="openUserSelector('Low Battery Alert')">→</button></td>
+        <td>Luxury Boats</td><td>Low Battery Alert</td><td>10</td><td>12</td><td>Daily</td>
+        <td>06:00 AM</td><td>10:00 PM</td><td>SMS</td><td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- USER SELECTOR POPUP -->
+<div id="userSelectorPopup" class="popup">
+  <h3>User Selector</h3>
+  <p><strong>Selected Alert:</strong> <span id="selectedAlertName">*High Bilge Alert</span></p>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>Copy Alert:</td>
+        <td><input type="text" value="*Copied Alert Demo"></td>
+      </tr>
+
+      <tr>
+        <td>Ignore Duplicates Value:</td>
+        <td><input type="text" value="10 min"></td>
+      </tr>
+
+      <tr>
+        <td>Threshold Value:</td>
+        <td><input type="text" value="5 nmi"></td>
+      </tr>
+
+      <!-- Scheduled Days Row -->
+      <tr>
+        <td colspan="2">
+          <div style="border: 1px solid #ccc; padding: 10px; border-radius: 6px; background-color: #f9f9f9;">
+            <h4>Scheduled Days</h4>
+            <label><input type="checkbox" checked> Sun</label>
+            <label><input type="checkbox" checked> Mon</label>
+            <label><input type="checkbox"> Tue</label>
+            <label><input type="checkbox" checked> Wed</label>
+            <label><input type="checkbox"> Thu</label>
+            <label><input type="checkbox"> Fri</label>
+            <label><input type="checkbox" checked> Sat</label>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Start Time:</td>
+        <td><input type="text" value="11:00:00 AM"></td>
+      </tr>
+
+      <tr>
+        <td>End Time:</td>
+        <td><input type="text" value="20:00:00 PM"></td>
+      </tr>
+
+      <tr>
+        <td>Delivery Email Address:</td>
+        <td><input type="text" value="alerts@argotrak.com"></td>
+      </tr>
+
+      <tr>
+        <td>Delivery Type:</td>
+        <td><input type="text" value="Email + SMS"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="text-align: right; margin-top: 10px;">
+    <button class="btn" onclick="closeUserSelector()">Close</button>
+  </div>
+</div>
+
+
+<!-- REPORTS TAB -->
+<div id="reports" class="tabcontent">
+  <h2>My Reports</h2>
+  <div class="report-card">
+    <h3>Alert Reports</h3>
+    <div>
+      <h4>Geofence Exception Report demo</h4>
+      <p>Scheduled: 10/10/2025 12:00 AM</p>
+      <button class="btn" onclick="openScheduler()">🕒 Scheduler Timer</button>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP for Report Scheduler -->
+<div id="schedulerPopup" class="popup">
+  <h3>Report Scheduler</h3>
+  <table>
+    <tr><td>Report Name:</td><td><input type="text" value="Geofence Exception Report demo"></td></tr>
+    <tr><td>Email To:</td><td><input type="text" value="mike@argotrak.com"></td></tr>
+    <tr><td>Email Subject:</td><td><input type="text" value="Geofence Exception Report - Monthly"></td></tr>
+    <tr><td>Report Language:</td><td><input type="text" value="English"></td></tr>
+    <tr><td>Report File Format:</td><td><input type="text" value="Acrobat File (PDF)"></td></tr>
+    <tr><td>Send Time:</td><td><input type="text" value="12:00 AM"></td></tr>
+    <tr><td>Repeat Frequency:</td><td><input type="text" value="Monthly"></td></tr>
+    <tr><td>Start Date:</td><td><input type="text" value="10/10/2025"></td></tr>
+  </table>
+  <button class="btn" onclick="closeScheduler()">Close</button>
+</div>
+
+<!-- MAINTENANCE TAB -->
+<div id="maintenance" class="tabcontent">
+  <h2>Maintenance</h2>
+  <p>Schedule and track maintenance tasks here.</p>
+</div>
+
+<!-- CREDENTIALS TAB -->
+<div id="credentials" class="tabcontent">
+    <h2>Credentials</h2>
+    <div style="display: flex; gap: 20px; align-items: flex-start;">
+      <!-- Left: Form Table -->
+      <div style="flex: 1; border: 1px solid #ccc; padding: 10px; border-radius: 6px; background-color: #f9f9f9;">
+        <table>
+          <tr><td>Full Name:</td><td><input type="text" value="Harry Johnson"></td></tr>
+          <tr><td>Username:</td><td><input type="text" value="harry_j"></td></tr>
+          <tr><td>Associated Group Name:</td><td><input type="text" value="charterboat_123"></td></tr>
+          <tr><td>Group Filter:</td><td><input type="text" value="charter boats"></td></tr>
+        </table>
+      </div>
+  
+      <!-- Right: Associated Items -->
+      <div style="flex: 1; border: 1px solid #ccc; padding: 10px; border-radius: 6px; background-color: #f9f9f9;">
+        <h3>Associated Items</h3>
+        <ul class="tree">
+          <li><input type="checkbox" checked> Charter Boats
+            <ul>
+              <li><input type="checkbox" checked> Double Sunshine</li>
+              <li><input type="checkbox"> Naples Explorer</li>
+            </ul>
+          </li>
+          <li><input type="checkbox"> Jet Skis</li>
+          <li><input type="checkbox" checked> Rental Boats</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+
+<script>
+// Tabs
+function openTab(tabName){
+  document.querySelectorAll('.tabcontent').forEach(t=>t.style.display='none');
+  document.getElementById(tabName).style.display='block';
+}
+
+// Alerts popup
+function openUserSelector(alertName){
+  document.getElementById("selectedAlertName").innerText = alertName;
+  document.getElementById("userSelectorPopup").style.display="block";
+}
+function closeUserSelector(){
+  document.getElementById("userSelectorPopup").style.display="none";
+}
+
+// Report Scheduler popup
+function openScheduler(){ document.getElementById("schedulerPopup").style.display="block"; }
+function closeScheduler(){ document.getElementById("schedulerPopup").style.display="none"; }
+
+// Filter demo
+function addFilter(){ alert("Filter added (demo)"); }
+
+// Download Excel
+var XLSX = {
+  utils: {
+    table_to_book: function(table){
+      var rows=[], trs = table.querySelectorAll('tr');
+      for(var i=0;i<trs.length;i++){
+        var row=[];
+        trs[i].querySelectorAll('th,td').forEach(td=>row.push(td.innerText));
+        rows.push(row);
+      }
+      return { SheetNames:["Sheet1"], Sheets:{Sheet1: rows}};
+    }
+  },
+  writeFile: function(name, wb){
+    let csv = wb.Sheets.Sheet1.map(r=>r.join(",")).join("\n");
+    let blob = new Blob([csv], {type:"application/vnd.ms-excel"});
+    let a=document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download=name;
+    a.click();
+  }
+};
+function downloadExcel(){
+  const table = document.getElementById("deviceTable");
+  const wb = XLSX.utils.table_to_book(table);
+  XLSX.writeFile("Main_Device_List.xls", wb);
+}
+
+// Dummy device data
+window.onload = () => {
+  let tbody = document.getElementById("deviceBody");
+  let dummy="";
+  for(let i=1;i<=20;i++){
+    dummy+=`<tr>
+      <td>${i%2==0?"Active":"Inactive"}</td>
+      <td>9/${i}/2025 9:0${i}</td>
+      <td>Client ${i}</td>
+      <td>Device_${i}</td>
+      <td>89340800000${i}</td>
+      <td>98989898${i}</td>
+      <td>9/${i}/2025</td>
+      <td>Admin ${i}</td>
+      <td>12/23/2020</td>
+      <td>VIN-${i}</td>
+      <td>Group ${i}</td>
+      <td>10/${i}/2010</td>
+      <td>CalAmp TD${i}</td>
+      <td>192.168.1.${i}</td>
+    </tr>`;
+  }
+  tbody.innerHTML=dummy;
+};
+
+// Settings dropdown toggle
+function toggleSettingsMenu(){
+  const menu = document.getElementById('settingsDropdown');
+  menu.style.display = menu.style.display==='block'?'none':'block';
+}
+
+// Close dropdown if clicked outside
+document.addEventListener('click', function(e){
+  const menu=document.getElementById('settingsDropdown');
+  const settingsIcon=document.querySelector('.settings-icon');
+  if(!settingsIcon.contains(e.target)){
+    menu.style.display='none';
+  }
+});
+</script>
+
+<!-- TOOLS & SETTINGS TAB -->
+<div id="toolsSettingsTab" class="tabcontent">
+    <h2>Tools & Settings</h2>
+    <div style="display:flex; gap:20px;">
+      <!-- Sidebar -->
+      <div style="width:200px; border:1px solid #ccc; padding:10px;">
+        <h3>Sidebar</h3>
+        <ul>
+          <li><button onclick="openMaintenance()">Maintenance Manager</button></li>
+          <li><button onclick="openSecurityTools()">Security Tools</button></li>
+        </ul>
+      </div>
+      <!-- Main content -->
+      <div id="toolsMainContent" style="flex:1; border:1px solid #ccc; padding:10px;">
+        <p>Select a sidebar option to view content</p>
+      </div>
+    </div>
+  </div>
+<script>
+    function openToolsSettings(event){
+  event.preventDefault(); // prevent default link behavior
+  toggleSettingsMenu();   // close dropdown
+  openTab('toolsSettingsTab'); // open the new tab
+}
+
+// Sidebar functions
+function openMaintenance(){
+  document.getElementById('toolsMainContent').innerHTML = `
+    <h3>Maintenance Manager</h3>
+    <table border="1" style="width:100%; border-collapse:collapse;">
+      <tr><th>Operation</th><th>Description</th></tr>
+      <tr><td>Op 1</td><td>Dummy description 1</td></tr>
+      <tr><td>Op 2</td><td>Dummy description 2</td></tr>
+      <p>
+      <a href="#" onclick="openTab('maintenance')">Maintence Manager</a>
+    </p>
+    </table>`;
+}
+
+function openSecurityTools(){
+  document.getElementById('toolsMainContent').innerHTML = `
+    <h3>Security Tools</h3>
+    <ul class="tree">
+      <li><input type="checkbox"> Tool 1</li>
+      <li><input type="checkbox"> Tool 2</li>
+      <li><input type="checkbox"> Tool 3</li>
+    </ul>
+    <p>
+      <a href="#" onclick="openTab('credentials')">Manage User Group Access</a>
+    </p>
+  `;
+}
+
+</script>  
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "site_url": "file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html",
+    "dummy_site_urls": {
+      "argotrak": "file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html",
+      "newgate": "file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html"
+    },
+    "username": "admin",
+    "password": "mypassword"
+  }
+  

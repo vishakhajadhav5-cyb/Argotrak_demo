@@ -1,0 +1,16 @@
+2025-11-04 21:43:05 | INFO | 🚀 Logger initialized successfully at: C:\Users\vishakhajad\Desktop\ArgoTrak_Project\Agrotrak_Python_Robot_Project\tests/../logs/agrotrak_run_20251104_214305.log
+2025-11-04 21:43:05 | INFO | ===== AgroTrak Automation Suite Started =====
+2025-11-04 21:43:05 | INFO | 🚀 Loading Environment Configurations
+2025-11-04 21:43:05 | INFO | ✅ Configurations Loaded Successfully
+2025-11-04 21:43:05 | INFO | 🌍 AgroTrak URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html
+2025-11-04 21:43:05 | INFO | 👤 AgroTrak Username: admin_argotrak
+2025-11-04 21:43:05 | INFO | 🌍 NewGate URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html
+2025-11-04 21:43:05 | INFO | 📊 Initializing Excel setup
+2025-11-04 21:43:05 | INFO | 🌍 Logging into AgroTrak
+2025-11-04 21:43:09 | INFO | ✅ AgroTrak login successful.
+2025-11-04 21:43:09 | INFO | 📋 Executing: Device List Actions
+2025-11-04 21:43:15 | ERROR | ❌ Exception occurred during Call Multiple UI Functions: Element 'xpath=//button[contains(text(),'Main Device List')]' not visible after 5 seconds.
+2025-11-04 21:43:15 | INFO | 🧹 Completed Call Multiple UI Functions (Cleanup Phase)
+2025-11-04 21:43:15 | ERROR | ❌ Exception caught during Run Multiple Environments: No keyword with name 'Append Error To Excel' found.
+2025-11-04 21:43:15 | INFO | 🧹 Cleaning up and closing browsers
+2025-11-04 21:43:21 | INFO | ===== Suite Execution Ended =====

@@ -1,0 +1,3462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.5 on win32)" generated="2025-11-05T17:31:02.036963" rpa="false" schemaversion="5">
+<suite id="s1" name="Main Suite" source="C:\Users\vishakhajad\Desktop\ArgoTrak_Project\Agrotrak_Python_Robot_Project\tests\main_suite.robot">
+<kw name="Initialize Suite" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🚀 Initializing AgroTrak Automation Suite...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.949027" elapsed="0.000000"/>
+</kw>
+<kw name="Initialize Logger" owner="logger_library">
+<msg time="2025-11-05T17:31:02.952559" level="INFO">🚀 Logger initialized successfully at: C:\Users\vishakhajad\Desktop\ArgoTrak_Project\Agrotrak_Python_Robot_Project\tests/../logs/agrotrak_run_20251105_173102.log</msg>
+<msg time="2025-11-05T17:31:02.952559" level="INFO">INFO: 🚀 Logger initialized successfully at: C:\Users\vishakhajad\Desktop\ArgoTrak_Project\Agrotrak_Python_Robot_Project\tests/../logs/agrotrak_run_20251105_173102.log</msg>
+<arg>${LOG_FILE}</arg>
+<doc>Initialize a dedicated logger with file + console output.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.950027" elapsed="0.003523"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:02.953550" level="INFO">===== AgroTrak Automation Suite Started =====</msg>
+<arg>===== AgroTrak Automation Suite Started =====</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.953550" elapsed="0.000000"/>
+</kw>
+<doc>Initialize logger, load configurations, and start the automation suite.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.948028" elapsed="0.005522"/>
+</kw>
+<test id="s1-t1" name="Run Multiple Environments" line="85">
+<try>
+<branch type="TRY">
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:02.955548" level="INFO">🚀 Loading Environment Configurations</msg>
+<arg>🚀 Loading Environment Configurations</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.954548" elapsed="0.001000"/>
+</kw>
+<kw name="Load All Config" owner="config_loader">
+<msg time="2025-11-05T17:31:02.956548" level="INFO">${envs} = {'argotrak': {'argotrak_url': 'file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html', 'argotrak_username': 'admin_argotrak', 'argotrak_pas...</msg>
+<var>${envs}</var>
+<arg>${DEV_CONFIG}</arg>
+<arg>${USER_CONFIG}</arg>
+<status status="PASS" start="2025-11-05T17:31:02.955548" elapsed="0.001000"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:02.956548" level="INFO">✅ Configurations Loaded Successfully</msg>
+<arg>✅ Configurations Loaded Successfully</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.956548" elapsed="0.000000"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:02.957548" level="INFO">🌍 AgroTrak URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html</msg>
+<arg>🌍 AgroTrak URL: ${envs['argotrak']['argotrak_url']}</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.956548" elapsed="0.001000"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:02.958550" level="INFO">👤 AgroTrak Username: admin_argotrak</msg>
+<arg>👤 AgroTrak Username: ${envs['argotrak']['argotrak_username']}</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.958550" elapsed="0.000000"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:02.959548" level="INFO">🌍 NewGate URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html</msg>
+<arg>🌍 NewGate URL: ${envs['newgate']['newgate_url']}</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.958550" elapsed="0.000998"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:02.959548" level="INFO">📊 Initializing Excel setup</msg>
+<arg>📊 Initializing Excel setup</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.959548" elapsed="0.000000"/>
+</kw>
+<kw name="Setup Excel" owner="excel_operation">
+<msg time="2025-11-05T17:31:03.224614" level="INFO">✅ Excel ready: results/output.xlsx</msg>
+<arg>${EXCEL_FILE}</arg>
+<doc>Create Excel if not exists and ensure required sheets.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.959548" elapsed="0.265066"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:03.224614" level="INFO">🌍 Logging into AgroTrak</msg>
+<arg>🌍 Logging into AgroTrak</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:03.224614" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Login To Agrotrak" owner="ui_common">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔹 Logging into site: ${url}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:03.227159" elapsed="0.000000"/>
+</kw>
+<kw name="Open Login" owner="ui_function">
+<msg time="2025-11-05T17:31:03.228157" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html'.</msg>
+<msg time="2025-11-05T17:31:21.000640" level="INFO">Typing text 'admin_argotrak' into text field 'id:username'.</msg>
+<msg time="2025-11-05T17:31:21.015718" level="INFO">🌐 Opening URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html
+ℹ️ No login form found (dummy page). Skipping login.</msg>
+<msg time="2025-11-05T17:31:21.016756" level="INFO">${driver} = &lt;SeleniumLibrary.SeleniumLibrary object at 0x0000028DF5090610&gt;</msg>
+<var>${driver}</var>
+<arg>${url}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Opens the given URL in a browser and performs login.
+Uses the SAME SeleniumLibrary instance that Robot Framework is using.</doc>
+<status status="PASS" start="2025-11-05T17:31:03.228157" elapsed="17.788599"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Browser opened and login (if any) attempted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.016756" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-11-05T17:31:21.017722" level="INFO">${driver} = &lt;SeleniumLibrary.SeleniumLibrary object at 0x0000028DF5090610&gt;</msg>
+<arg>${driver}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.017722" elapsed="0.000000"/>
+</kw>
+<arg>${envs['argotrak']['argotrak_url']}</arg>
+<arg>${envs['argotrak']['argotrak_username']}</arg>
+<arg>${envs['argotrak']['argotrak_password']}</arg>
+<status status="PASS" start="2025-11-05T17:31:03.226150" elapsed="17.791572"/>
+</kw>
+<msg time="2025-11-05T17:31:21.017722" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Login To Agrotrak</arg>
+<arg>${envs['argotrak']['argotrak_url']}</arg>
+<arg>${envs['argotrak']['argotrak_username']}</arg>
+<arg>${envs['argotrak']['argotrak_password']}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:03.224614" elapsed="17.793108"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${status}</arg>
+<arg>Log Error</arg>
+<arg>❌ AgroTrak login failed!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.017722" elapsed="0.001033"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:21.018755" level="INFO">✅ AgroTrak login successful.</msg>
+<arg>✅ AgroTrak login successful.</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.018755" elapsed="0.000000"/>
+</kw>
+<arg>${status}</arg>
+<arg>Log Info</arg>
+<arg>✅ AgroTrak login successful.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.018755" elapsed="0.000000"/>
+</kw>
+<kw name="Call Multiple UI Functions">
+<try>
+<branch type="TRY">
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:21.020913" level="INFO">📋 Executing: Device List Actions</msg>
+<arg>📋 Executing: Device List Actions</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.020913" elapsed="0.000000"/>
+</kw>
+<kw name="Perform Device List Actions" owner="devicelist_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🧭 Performing Main Device List actions...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.021866" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(text(),'Main Device List')]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.021866" elapsed="0.040813"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:21.063708" level="INFO">Clicking element 'xpath=//button[contains(text(),'Main Device List')]'.</msg>
+<arg>xpath=//button[contains(text(),'Main Device List')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.063158" elapsed="0.154524"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:22.218114" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.217682" elapsed="1.000432"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Clicked Main Device List Tab</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.218114" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:22.241323" level="INFO">Element 'xpath=//button[contains(text(),'Download') or contains(@id,'download')]' is displayed.</msg>
+<arg>xpath=//button[contains(text(),'Download') or contains(@id,'download')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.219119" elapsed="0.022204"/>
+</kw>
+<msg time="2025-11-05T17:31:22.241323" level="INFO">${is_download_visible} = True</msg>
+<var>${is_download_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//button[contains(text(),'Download') or contains(@id,'download')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.218114" elapsed="0.023209"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:22.242322" level="INFO">Clicking element 'xpath=//button[contains(text(),'Download') or contains(@id,'download')]'.</msg>
+<arg>xpath=//button[contains(text(),'Download') or contains(@id,'download')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.241323" elapsed="0.105762"/>
+</kw>
+<arg>${is_download_visible}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//button[contains(text(),'Download') or contains(@id,'download')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.241323" elapsed="0.105762"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Download Button Clicked</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.348085" elapsed="0.000000"/>
+</kw>
+<arg>${is_download_visible}</arg>
+<arg>Log To Console</arg>
+<arg>✅ Download Button Clicked</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>⚠️ Download Button not found.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.347085" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:22.369873" level="INFO">Current page contains element 'xpath=//table[@id='deviceTable']'.</msg>
+<arg>xpath=//table[@id='deviceTable']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.348085" elapsed="0.022324"/>
+</kw>
+<msg time="2025-11-05T17:31:22.370409" level="INFO">${table_present} = True</msg>
+<var>${table_present}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//table[@id='deviceTable']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.348085" elapsed="0.022324"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Extract And Save Device Table" owner="devicelist_keywords">
+<kw name="Extract Device Table" owner="devicelist_table">
+<msg time="2025-11-05T17:31:26.144586" level="INFO">${rows} = [['Inactive', '9/1/2025 9:01', 'Client 1', 'Device_1', '893408000001', '989898981', '9/1/2025', 'Admin 1', '12/23/2020', 'VIN-1', 'Group 1', '10/1/2010', 'CalAmp TD1', '192.168.1.1'], ['Active', '9/2/...</msg>
+<var>${rows}</var>
+<doc>Return all rows of the device table as a list of lists of strings.
+Each inner list corresponds to one table row.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.371278" elapsed="3.773308"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🖨️ Extracted rows:</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.144586" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.145586" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Inactive', '9/1/2025 9:01', 'Client 1', 'Device_1', '893408000001', '989898981', '9/1/2025', 'Admin 1', '12/23/2020', 'VIN-1', 'Group 1', '10/1/2010', 'CalAmp TD1', '192.168.1.1']</var>
+<status status="PASS" start="2025-11-05T17:31:26.145586" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.146625" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Active', '9/2/2025 9:02', 'Client 2', 'Device_2', '893408000002', '989898982', '9/2/2025', 'Admin 2', '12/23/2020', 'VIN-2', 'Group 2', '10/2/2010', 'CalAmp TD2', '192.168.1.2']</var>
+<status status="PASS" start="2025-11-05T17:31:26.145586" elapsed="0.001039"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.146625" elapsed="0.001001"/>
+</kw>
+<var name="${row}">['Inactive', '9/3/2025 9:03', 'Client 3', 'Device_3', '893408000003', '989898983', '9/3/2025', 'Admin 3', '12/23/2020', 'VIN-3', 'Group 3', '10/3/2010', 'CalAmp TD3', '192.168.1.3']</var>
+<status status="PASS" start="2025-11-05T17:31:26.146625" elapsed="0.001001"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.147626" elapsed="0.000999"/>
+</kw>
+<var name="${row}">['Active', '9/4/2025 9:04', 'Client 4', 'Device_4', '893408000004', '989898984', '9/4/2025', 'Admin 4', '12/23/2020', 'VIN-4', 'Group 4', '10/4/2010', 'CalAmp TD4', '192.168.1.4']</var>
+<status status="PASS" start="2025-11-05T17:31:26.147626" elapsed="0.000999"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.148625" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Inactive', '9/5/2025 9:05', 'Client 5', 'Device_5', '893408000005', '989898985', '9/5/2025', 'Admin 5', '12/23/2020', 'VIN-5', 'Group 5', '10/5/2010', 'CalAmp TD5', '192.168.1.5']</var>
+<status status="PASS" start="2025-11-05T17:31:26.148625" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.149625" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Active', '9/6/2025 9:06', 'Client 6', 'Device_6', '893408000006', '989898986', '9/6/2025', 'Admin 6', '12/23/2020', 'VIN-6', 'Group 6', '10/6/2010', 'CalAmp TD6', '192.168.1.6']</var>
+<status status="PASS" start="2025-11-05T17:31:26.149625" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.150626" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Inactive', '9/7/2025 9:07', 'Client 7', 'Device_7', '893408000007', '989898987', '9/7/2025', 'Admin 7', '12/23/2020', 'VIN-7', 'Group 7', '10/7/2010', 'CalAmp TD7', '192.168.1.7']</var>
+<status status="PASS" start="2025-11-05T17:31:26.149625" elapsed="0.001001"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.150626" elapsed="0.001330"/>
+</kw>
+<var name="${row}">['Active', '9/8/2025 9:08', 'Client 8', 'Device_8', '893408000008', '989898988', '9/8/2025', 'Admin 8', '12/23/2020', 'VIN-8', 'Group 8', '10/8/2010', 'CalAmp TD8', '192.168.1.8']</var>
+<status status="PASS" start="2025-11-05T17:31:26.150626" elapsed="0.001330"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.151956" elapsed="0.000998"/>
+</kw>
+<var name="${row}">['Inactive', '9/9/2025 9:09', 'Client 9', 'Device_9', '893408000009', '989898989', '9/9/2025', 'Admin 9', '12/23/2020', 'VIN-9', 'Group 9', '10/9/2010', 'CalAmp TD9', '192.168.1.9']</var>
+<status status="PASS" start="2025-11-05T17:31:26.151956" elapsed="0.000998"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.152954" elapsed="0.001000"/>
+</kw>
+<var name="${row}">['Active', '9/10/2025 9:010', 'Client 10', 'Device_10', '8934080000010', '9898989810', '9/10/2025', 'Admin 10', '12/23/2020', 'VIN-10', 'Group 10', '10/10/2010', 'CalAmp TD10', '192.168.1.10']</var>
+<status status="PASS" start="2025-11-05T17:31:26.152954" elapsed="0.001000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.153954" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Inactive', '9/11/2025 9:011', 'Client 11', 'Device_11', '8934080000011', '9898989811', '9/11/2025', 'Admin 11', '12/23/2020', 'VIN-11', 'Group 11', '10/11/2010', 'CalAmp TD11', '192.168.1.11']</var>
+<status status="PASS" start="2025-11-05T17:31:26.153954" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.153954" elapsed="0.001507"/>
+</kw>
+<var name="${row}">['Active', '9/12/2025 9:012', 'Client 12', 'Device_12', '8934080000012', '9898989812', '9/12/2025', 'Admin 12', '12/23/2020', 'VIN-12', 'Group 12', '10/12/2010', 'CalAmp TD12', '192.168.1.12']</var>
+<status status="PASS" start="2025-11-05T17:31:26.153954" elapsed="0.001507"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.155461" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Inactive', '9/13/2025 9:013', 'Client 13', 'Device_13', '8934080000013', '9898989813', '9/13/2025', 'Admin 13', '12/23/2020', 'VIN-13', 'Group 13', '10/13/2010', 'CalAmp TD13', '192.168.1.13']</var>
+<status status="PASS" start="2025-11-05T17:31:26.155461" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.156466" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Active', '9/14/2025 9:014', 'Client 14', 'Device_14', '8934080000014', '9898989814', '9/14/2025', 'Admin 14', '12/23/2020', 'VIN-14', 'Group 14', '10/14/2010', 'CalAmp TD14', '192.168.1.14']</var>
+<status status="PASS" start="2025-11-05T17:31:26.156466" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.157466" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Inactive', '9/15/2025 9:015', 'Client 15', 'Device_15', '8934080000015', '9898989815', '9/15/2025', 'Admin 15', '12/23/2020', 'VIN-15', 'Group 15', '10/15/2010', 'CalAmp TD15', '192.168.1.15']</var>
+<status status="PASS" start="2025-11-05T17:31:26.157466" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.158467" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Active', '9/16/2025 9:016', 'Client 16', 'Device_16', '8934080000016', '9898989816', '9/16/2025', 'Admin 16', '12/23/2020', 'VIN-16', 'Group 16', '10/16/2010', 'CalAmp TD16', '192.168.1.16']</var>
+<status status="PASS" start="2025-11-05T17:31:26.158467" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.159466" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Inactive', '9/17/2025 9:017', 'Client 17', 'Device_17', '8934080000017', '9898989817', '9/17/2025', 'Admin 17', '12/23/2020', 'VIN-17', 'Group 17', '10/17/2010', 'CalAmp TD17', '192.168.1.17']</var>
+<status status="PASS" start="2025-11-05T17:31:26.158467" elapsed="0.000999"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.159466" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Active', '9/18/2025 9:018', 'Client 18', 'Device_18', '8934080000018', '9898989818', '9/18/2025', 'Admin 18', '12/23/2020', 'VIN-18', 'Group 18', '10/18/2010', 'CalAmp TD18', '192.168.1.18']</var>
+<status status="PASS" start="2025-11-05T17:31:26.159466" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.160742" elapsed="0.000000"/>
+</kw>
+<var name="${row}">['Inactive', '9/19/2025 9:019', 'Client 19', 'Device_19', '8934080000019', '9898989819', '9/19/2025', 'Admin 19', '12/23/2020', 'VIN-19', 'Group 19', '10/19/2010', 'CalAmp TD19', '192.168.1.19']</var>
+<status status="PASS" start="2025-11-05T17:31:26.160742" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.160742" elapsed="0.001004"/>
+</kw>
+<var name="${row}">['Active', '9/20/2025 9:020', 'Client 20', 'Device_20', '8934080000020', '9898989820', '9/20/2025', 'Admin 20', '12/23/2020', 'VIN-20', 'Group 20', '10/20/2010', 'CalAmp TD20', '192.168.1.20']</var>
+<status status="PASS" start="2025-11-05T17:31:26.160742" elapsed="0.001004"/>
+</iter>
+<var>${row}</var>
+<value>@{rows}</value>
+<status status="PASS" start="2025-11-05T17:31:26.144586" elapsed="0.017160"/>
+</for>
+<kw name="Append Rows To Sheet" owner="excel_operation">
+<msg time="2025-11-05T17:31:26.477115" level="INFO">✅ Appended 20 rows to 'MainDeviceList'</msg>
+<arg>${EXCEL_FILE}</arg>
+<arg>MainDeviceList</arg>
+<arg>${rows}</arg>
+<doc>Append multiple rows to an Excel sheet.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.161746" elapsed="0.315369"/>
+</kw>
+<doc>Extract device list table and append to Excel</doc>
+<status status="PASS" start="2025-11-05T17:31:22.371278" elapsed="4.105837"/>
+</kw>
+<arg>${table_present}</arg>
+<arg>Extract And Save Device Table</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>⚠️ No device table found on the page.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:22.370947" elapsed="4.106168"/>
+</kw>
+<doc>Perform all actions for Main Device List tab</doc>
+<status status="PASS" start="2025-11-05T17:31:21.020913" elapsed="5.456202"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:27.479001" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:26.477115" elapsed="1.001886"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:27.479001" level="INFO">📋 Executing: Alerts Tab Actions</msg>
+<arg>📋 Executing: Alerts Tab Actions</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:27.479001" elapsed="0.000000"/>
+</kw>
+<kw name="Open Alerts Tab" owner="alerts_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔹 Opening Alerts tab...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:27.481008" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[text()='Alerts']</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:27.482023" elapsed="0.032326"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:27.515333" level="INFO">Clicking element 'xpath=//button[text()='Alerts']'.</msg>
+<arg>xpath=//button[text()='Alerts']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:27.514349" elapsed="0.125513"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:28.641399" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:27.639862" elapsed="1.001537"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Alerts tab opened</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.641954" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:27.480011" elapsed="1.161943"/>
+</kw>
+<kw name="Process Alerts Table" owner="alerts_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔹 Checking if Alerts table has rows...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.642963" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.658650" level="INFO">Current page contains element '//table[@id='alertTable']//tbody/tr'.</msg>
+<arg>${ALERT_TABLE}//tbody/tr</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.643965" elapsed="0.014685"/>
+</kw>
+<msg time="2025-11-05T17:31:28.658650" level="INFO">${rows_present} = True</msg>
+<var>${rows_present}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${ALERT_TABLE}//tbody/tr</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.642963" elapsed="0.015687"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Extract And Save Alerts" owner="alerts_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔹 Extracting alerts from table...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.659647" elapsed="0.000000"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.678896" level="INFO">${rows} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.357")&gt;, &lt;selenium.webdri...</msg>
+<var>${rows}</var>
+<arg>xpath=//table[@id='alertTable']//tbody/tr</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.659647" elapsed="0.019249"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-05T17:31:28.679412" level="INFO">Length is 2.</msg>
+<msg time="2025-11-05T17:31:28.679412" level="INFO">${num_rows} = 2</msg>
+<var>${num_rows}</var>
+<arg>${rows}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.679412" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>ℹ️ Found ${num_rows} rows in Alerts table</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.679412" elapsed="0.001015"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.696474" level="INFO">${td_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.359")&gt;, &lt;selenium.webdri...</msg>
+<var>${td_elements}</var>
+<arg>xpath=//table[@id='alertTable']//tbody/tr[${i}]/td</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.681935" elapsed="0.014539"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:28.696474" level="INFO">${cells} = []</msg>
+<var>${cells}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.696474" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.716580" level="INFO">${text} = ⭐</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.697475" elapsed="0.019105"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.716580" level="INFO">${text} = ⭐</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.716580" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.716580" elapsed="0.000000"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.359")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.696474" elapsed="0.020106"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.731158" level="INFO">${text} = →</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.717585" elapsed="0.014549"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.733079" level="INFO">${text} = →</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.732651" elapsed="0.000428"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.733584" elapsed="0.000000"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.360")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.717585" elapsed="0.015999"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.748816" level="INFO">${text} = Charter Boats</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.734639" elapsed="0.014177"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.749810" level="INFO">${text} = Charter Boats</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.749810" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.749810" elapsed="0.000000"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.361")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.734639" elapsed="0.015171"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.762831" level="INFO">${text} = High Bilge Alert</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.750816" elapsed="0.012015"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.763855" level="INFO">${text} = High Bilge Alert</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.763855" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.763855" elapsed="0.000000"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.362")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.749810" elapsed="0.014045"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.778738" level="INFO">${text} = 5</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.764842" elapsed="0.013896"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.779774" level="INFO">${text} = 5</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.779774" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.779774" elapsed="0.000000"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.363")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.763855" elapsed="0.015919"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.794616" level="INFO">${text} = 10</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.779774" elapsed="0.014842"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.795299" level="INFO">${text} = 10</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.795299" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.795299" elapsed="0.000510"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.364")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.779774" elapsed="0.016035"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.810236" level="INFO">${text} = Mon-Fri</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.796255" elapsed="0.013981"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.811237" level="INFO">${text} = Mon-Fri</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.811237" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.811237" elapsed="0.000000"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.365")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.795809" elapsed="0.015428"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.825006" level="INFO">${text} = 08:00 AM</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.811237" elapsed="0.013769"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.825006" level="INFO">${text} = 08:00 AM</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.825006" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.825006" elapsed="0.000000"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.366")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.811237" elapsed="0.014766"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.837968" level="INFO">${text} = 06:00 PM</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.826003" elapsed="0.011965"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.837968" level="INFO">${text} = 06:00 PM</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.837968" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.837968" elapsed="0.001031"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.367")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.826003" elapsed="0.012996"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.848966" level="INFO">${text} = Email</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.838999" elapsed="0.009967"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.849966" level="INFO">${text} = Email</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.848966" elapsed="0.001000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.849966" elapsed="0.000000"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.368")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.838999" elapsed="0.010967"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:28.865544" level="INFO">${text} = Administrator</msg>
+<var>${text}</var>
+<arg>${td}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.849966" elapsed="0.015578"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.866543" level="INFO">${text} = Administrator</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.866543" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${cells}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.866543" elapsed="0.000000"/>
+</kw>
+<var name="${td}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.369")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:28.849966" elapsed="0.016577"/>
+</iter>
+<var>${td}</var>
+<value>@{td_elements}</value>
+<status status="PASS" start="2025-11-05T17:31:28.696474" elapsed="0.170069"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔸 Row ${i} values -&gt; ${cells}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.866543" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-05T17:31:28.867543" level="INFO">${has_star} = False</msg>
+<var>${has_star}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.867543" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-05T17:31:28.867543" level="INFO">${has_admin} = False</msg>
+<var>${has_admin}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.867543" elapsed="0.001000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.868543" level="INFO">${value_clean} = ⭐</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.868543" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.868543" level="INFO">${value_lower} = ⭐</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.868543" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.868543" elapsed="0.000999"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-05T17:31:28.869542" level="INFO">${has_star} = True</msg>
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.869542" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:28.869542" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.869542" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.870571" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.869542" elapsed="0.001029"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.869542" elapsed="0.001029"/>
+</if>
+<var name="${value}">⭐</var>
+<status status="PASS" start="2025-11-05T17:31:28.868543" elapsed="0.002028"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.870571" level="INFO">${value_clean} = →</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.870571" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.871542" level="INFO">${value_lower} = →</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.870571" elapsed="0.000971"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.871542" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.871542" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.871542" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.871542" elapsed="0.001000"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.872542" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.872542" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.872542" elapsed="0.000000"/>
+</if>
+<var name="${value}">→</var>
+<status status="PASS" start="2025-11-05T17:31:28.870571" elapsed="0.001971"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.872542" level="INFO">${value_clean} = Charter Boats</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.872542" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.873543" level="INFO">${value_lower} = charter boats</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.873543" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.873543" elapsed="0.000703"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.874246" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.874246" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.874246" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.874246" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.874246" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.874246" elapsed="0.000000"/>
+</if>
+<var name="${value}">Charter Boats</var>
+<status status="PASS" start="2025-11-05T17:31:28.872542" elapsed="0.001704"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.875252" level="INFO">${value_clean} = High Bilge Alert</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.875252" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.875252" level="INFO">${value_lower} = high bilge alert</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.875252" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.875252" elapsed="0.001000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.876252" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.876252" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.876252" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.876252" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.876252" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.876252" elapsed="0.000000"/>
+</if>
+<var name="${value}">High Bilge Alert</var>
+<status status="PASS" start="2025-11-05T17:31:28.874246" elapsed="0.002006"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.877251" level="INFO">${value_clean} = 5</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.877251" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.877251" level="INFO">${value_lower} = 5</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.877251" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.877251" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.877251" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.877251" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.877251" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.878831" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.878831" elapsed="0.000503"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.878756" elapsed="0.000578"/>
+</if>
+<var name="${value}">5</var>
+<status status="PASS" start="2025-11-05T17:31:28.876252" elapsed="0.003082"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.879334" level="INFO">${value_clean} = 10</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.879334" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.879334" level="INFO">${value_lower} = 10</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.879334" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.879334" elapsed="0.001005"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.880339" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.880339" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.880339" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.881370" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.880339" elapsed="0.001031"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.880339" elapsed="0.001031"/>
+</if>
+<var name="${value}">10</var>
+<status status="PASS" start="2025-11-05T17:31:28.879334" elapsed="0.002036"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.881370" level="INFO">${value_clean} = Mon-Fri</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.881370" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.881370" level="INFO">${value_lower} = mon-fri</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.881370" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.882490" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.882490" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.882490" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.882490" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.883490" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.883490" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.883490" elapsed="0.000000"/>
+</if>
+<var name="${value}">Mon-Fri</var>
+<status status="PASS" start="2025-11-05T17:31:28.881370" elapsed="0.002120"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.883490" level="INFO">${value_clean} = 08:00 AM</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.883490" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.884491" level="INFO">${value_lower} = 08:00 am</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.883490" elapsed="0.001001"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.884491" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.885489" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.884491" elapsed="0.000998"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.884491" elapsed="0.000998"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.885489" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.885489" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.885489" elapsed="0.000000"/>
+</if>
+<var name="${value}">08:00 AM</var>
+<status status="PASS" start="2025-11-05T17:31:28.883490" elapsed="0.001999"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.885489" level="INFO">${value_clean} = 06:00 PM</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.885489" elapsed="0.001004"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.886493" level="INFO">${value_lower} = 06:00 pm</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.886493" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.886493" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.887497" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.887497" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.887497" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.887497" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.887497" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.887497" elapsed="0.000000"/>
+</if>
+<var name="${value}">06:00 PM</var>
+<status status="PASS" start="2025-11-05T17:31:28.885489" elapsed="0.002008"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.888520" level="INFO">${value_clean} = Email</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.888520" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.888520" level="INFO">${value_lower} = email</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.888520" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.888520" elapsed="0.000970"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.889490" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.889490" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.889490" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.889490" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.889490" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.889490" elapsed="0.000000"/>
+</if>
+<var name="${value}">Email</var>
+<status status="PASS" start="2025-11-05T17:31:28.887497" elapsed="0.001993"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:28.890519" level="INFO">${value_clean} = Administrator</msg>
+<var>${value_clean}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.890519" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:28.890519" level="INFO">${value_lower} = administrator</msg>
+<var>${value_lower}</var>
+<arg>${value_clean}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.890519" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comparing: [${value_clean}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.890519" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="'${value_clean}' == '⭐'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${has_star}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:28.891520" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:28.891520" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.891520" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'administrator' in '${value_lower}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-05T17:31:28.892519" level="INFO">${has_admin} = True</msg>
+<var>${has_admin}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.891520" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:28.891520" elapsed="0.000999"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.891520" elapsed="0.000999"/>
+</if>
+<var name="${value}">Administrator</var>
+<status status="PASS" start="2025-11-05T17:31:28.890519" elapsed="0.002000"/>
+</iter>
+<var>${value}</var>
+<value>@{cells}</value>
+<status status="PASS" start="2025-11-05T17:31:28.868543" elapsed="0.023976"/>
+</for>
+<if>
+<branch type="IF" condition="${has_star} and ${has_admin}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Row ${i} contains ⭐ and Administrator -&gt; ${cells}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.892519" elapsed="0.000972"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-05T17:31:28.893491" level="INFO">${group_name} = Charter Boats</msg>
+<var>${group_name}</var>
+<arg>${cells[2]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.893491" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>group name -&gt; ${group_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.893491" elapsed="0.001028"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-05T17:31:28.894519" level="INFO">${arrow_xpath} = //table[@id='alertTable']//tbody/tr[1]/td[2]/button</msg>
+<var>${arrow_xpath}</var>
+<arg>//table[@id='alertTable']//tbody/tr[${i}]/td[2]/button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.894519" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔹 Clicking forward arrow for row ${i}...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.894519" elapsed="0.000973"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:29.895581" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.895492" elapsed="1.000089"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:29.895581" level="INFO">Clicking element '//table[@id='alertTable']//tbody/tr[1]/td[2]/button'.</msg>
+<arg>${arrow_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:29.895581" elapsed="0.171714"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:35.068948" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:30.068803" elapsed="5.000145"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@id='userSelectorPopup' and contains(@style,'display: block')]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.068948" elapsed="0.035396"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ User Selector popup is visible!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.104344" elapsed="0.000976"/>
+</kw>
+<kw name="Extract User Popup Data" owner="alerts_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=userSelectorPopup</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.106320" elapsed="0.035699"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔍 Extracting values from User Selector popup...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.142019" elapsed="0.001027"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.182756" level="INFO">${selected_alert} = High Bilge Alert</msg>
+<var>${selected_alert}</var>
+<arg>xpath=//span[@id='selectedAlertName']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.143046" elapsed="0.039710"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.222642" level="INFO">${copy_alert} = *Copied Alert Demo</msg>
+<var>${copy_alert}</var>
+<arg>xpath=//td[normalize-space(text())='Copy Alert:']/following-sibling::td//input</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.182756" elapsed="0.039886"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.254381" level="INFO">${ignore_duplicates} = 10 min</msg>
+<var>${ignore_duplicates}</var>
+<arg>xpath=//td[normalize-space(text())='Ignore Duplicates Value:']/following-sibling::td//input</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.222642" elapsed="0.033246"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.287033" level="INFO">${threshold} = 5 nmi</msg>
+<var>${threshold}</var>
+<arg>xpath=//td[normalize-space(text())='Threshold Value:']/following-sibling::td//input</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.255888" elapsed="0.031145"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.321088" level="INFO">${start_time} = 11:00:00 AM</msg>
+<var>${start_time}</var>
+<arg>xpath=//td[normalize-space(text())='Start Time:']/following-sibling::td//input</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.288043" elapsed="0.033045"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.352006" level="INFO">${end_time} = 20:00:00 PM</msg>
+<var>${end_time}</var>
+<arg>xpath=//td[normalize-space(text())='End Time:']/following-sibling::td//input</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.322087" elapsed="0.029919"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.383704" level="INFO">${email} = alerts@argotrak.com</msg>
+<var>${email}</var>
+<arg>xpath=//td[normalize-space(text())='Delivery Email Address:']/following-sibling::td//input</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.352006" elapsed="0.031698"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.412276" level="INFO">${delivery_type} = Email + SMS</msg>
+<var>${delivery_type}</var>
+<arg>xpath=//td[normalize-space(text())='Delivery Type:']/following-sibling::td//input</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.383704" elapsed="0.028572"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.429203" level="INFO">@{checked_days} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.380")&gt; | &lt;selenium.webd...</msg>
+<var>@{checked_days}</var>
+<arg>xpath=//div[h4[contains(.,'Scheduled Days')]]//label[input[@checked]]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.412781" elapsed="0.016422"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:35.429269" level="INFO">${days} = []</msg>
+<var>${days}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.429269" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.440767" level="INFO">${day} = Sun</msg>
+<var>${day}</var>
+<arg>${label}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.429773" elapsed="0.010994"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${days}</arg>
+<arg>${day}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.440767" elapsed="0.000000"/>
+</kw>
+<var name="${label}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.380")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:35.429773" elapsed="0.010994"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.455847" level="INFO">${day} = Mon</msg>
+<var>${day}</var>
+<arg>${label}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.441774" elapsed="0.014073"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${days}</arg>
+<arg>${day}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.456844" elapsed="0.000000"/>
+</kw>
+<var name="${label}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.381")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:35.441774" elapsed="0.015070"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.470039" level="INFO">${day} = Wed</msg>
+<var>${day}</var>
+<arg>${label}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.456844" elapsed="0.013195"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${days}</arg>
+<arg>${day}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.470039" elapsed="0.000000"/>
+</kw>
+<var name="${label}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.382")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:35.456844" elapsed="0.013195"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:35.484450" level="INFO">${day} = Sat</msg>
+<var>${day}</var>
+<arg>${label}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.470039" elapsed="0.014411"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${days}</arg>
+<arg>${day}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.484450" elapsed="0.000000"/>
+</kw>
+<var name="${label}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.383")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:35.470039" elapsed="0.014411"/>
+</iter>
+<var>${label}</var>
+<value>@{checked_days}</value>
+<status status="PASS" start="2025-11-05T17:31:35.429269" elapsed="0.055181"/>
+</for>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-11-05T17:31:35.485450" level="INFO">${days_str} = Sun,Mon,Wed,Sat</msg>
+<var>${days_str}</var>
+<arg>SEPARATOR=,</arg>
+<arg>@{days}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.485450" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Popup Data:</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.485450" elapsed="0.000997"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Selected Alert: ${selected_alert}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.486447" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Copy Alert: ${copy_alert}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.487451" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-11-05T17:31:35.487451" level="INFO">${cleaned_copy_alert} = Copied Alert Demo</msg>
+<var>${cleaned_copy_alert}</var>
+<arg>${copy_alert}</arg>
+<arg>*</arg>
+<arg>${EMPTY}</arg>
+<arg>count=1</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.487451" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Copy Alert: ${cleaned_copy_alert}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.488957" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Ignore Duplicates: ${ignore_duplicates}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.488957" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Threshold: ${threshold}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.489965" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Scheduled Days: ${days_str}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.489965" elapsed="0.000998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Start Time: ${start_time}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.490963" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>End Time: ${end_time}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.490963" elapsed="0.001000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Email: ${email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.491963" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Delivery Type: ${delivery_type}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.491963" elapsed="0.001000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:35.492963" level="INFO">${row} = ['Charter Boats', 'Copied Alert Demo', '10 min', '5 nmi', 'Sun,Mon,Wed,Sat', '11:00:00 AM', '20:00:00 PM', 'alerts@argotrak.com']</msg>
+<var>${row}</var>
+<arg>${group_name}</arg>
+<arg>${cleaned_copy_alert}</arg>
+<arg>${ignore_duplicates}</arg>
+<arg>${threshold}</arg>
+<arg>${days_str}</arg>
+<arg>${start_time}</arg>
+<arg>${end_time}</arg>
+<arg>${email}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.492963" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:35.492963" level="INFO">${rows} = [['Charter Boats', 'Copied Alert Demo', '10 min', '5 nmi', 'Sun,Mon,Wed,Sat', '11:00:00 AM', '20:00:00 PM', 'alerts@argotrak.com']]</msg>
+<var>${rows}</var>
+<arg>${row}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.492963" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Appending row to Excel: ${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.493962" elapsed="0.000000"/>
+</kw>
+<kw name="Append Rows To Sheet" owner="excel_operation">
+<msg time="2025-11-05T17:31:35.762601" level="INFO">✅ Appended 1 rows to 'Alerts'</msg>
+<arg>${EXCEL_FILE}</arg>
+<arg>Alerts</arg>
+<arg>${rows}</arg>
+<doc>Append multiple rows to an Excel sheet.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.493962" elapsed="0.268639"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Added popup data to Excel successfully!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.762601" elapsed="0.001054"/>
+</kw>
+<arg>${group_name}</arg>
+<arg>${excel_file}</arg>
+<status status="PASS" start="2025-11-05T17:31:35.106320" elapsed="0.657335"/>
+</kw>
+<break>
+<status status="PASS" start="2025-11-05T17:31:35.763655" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2025-11-05T17:31:28.892519" elapsed="6.871136"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:28.892519" elapsed="6.871136"/>
+</if>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-11-05T17:31:28.681935" elapsed="7.081720"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${num_rows + 1}</value>
+<status status="PASS" start="2025-11-05T17:31:28.680427" elapsed="7.083228"/>
+</for>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:37.765252" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:35.764638" elapsed="2.000614"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-05T17:31:37.766135" level="INFO">${close_popup} = //*[@id="userSelectorPopup"]/div/button</msg>
+<var>${close_popup}</var>
+<arg>//*[@id="userSelectorPopup"]/div/button</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-05T17:31:37.765252" elapsed="0.000883"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:37.766135" level="INFO">Clicking element '//*[@id="userSelectorPopup"]/div/button'.</msg>
+<arg>${close_popup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:37.766135" elapsed="0.109601"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:39.876130" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:37.875736" elapsed="2.000394"/>
+</kw>
+<arg>${excel_file}</arg>
+<status status="PASS" start="2025-11-05T17:31:28.659647" elapsed="11.216483"/>
+</kw>
+<arg>${rows_present}</arg>
+<arg>Extract And Save Alerts</arg>
+<arg>${excel_file}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:28.658650" elapsed="11.217480"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${rows_present}</arg>
+<arg>Log To Console</arg>
+<arg>⚠️ No rows found in Alerts table</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:39.876130" elapsed="0.000000"/>
+</kw>
+<arg>${EXCEL_FILE}</arg>
+<status status="PASS" start="2025-11-05T17:31:28.642963" elapsed="11.233167"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:40.877504" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:39.877171" elapsed="1.000333"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:40.878023" level="INFO">📋 Executing: Reports Tab Actions</msg>
+<arg>📋 Executing: Reports Tab Actions</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:40.878023" elapsed="0.000000"/>
+</kw>
+<kw name="Open Reports Tab" owner="reports_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔹 Opening Reports tab...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:40.878544" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[normalize-space()='Reports']</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:40.879575" elapsed="0.027523"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:40.907098" level="INFO">Clicking element 'xpath=//button[normalize-space()='Reports']'.</msg>
+<arg>xpath=//button[normalize-space()='Reports']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:40.907098" elapsed="0.117673"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:42.024923" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:41.024771" elapsed="1.000152"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Reports tab opened successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.024923" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:40.878544" elapsed="1.147511"/>
+</kw>
+<kw name="Process Reports Tab" owner="reports_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔍 Scanning Reports cards for Scheduled entries...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.026055" elapsed="0.000974"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:42.040637" level="INFO">${report_cards} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.388")&gt;]</msg>
+<var>${report_cards}</var>
+<arg>${REPORT_CARD}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.027029" elapsed="0.013608"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${report_cards}' == '[]'</arg>
+<arg>Log To Console</arg>
+<arg>⚠️ No report cards found!</arg>
+<arg>AND</arg>
+<arg>RETURN</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.040637" elapsed="0.001006"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:42.059642" level="INFO">${text} = Alert Reports
+Geofence Exception Report demo
+Scheduled: 10/10/2025 12:00 AM
+🕒 Scheduler Timer</msg>
+<var>${text}</var>
+<arg>${card}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.042642" elapsed="0.017000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-11-05T17:31:42.059642" level="INFO">${text_lower} = alert reports
+geofence exception report demo
+scheduled: 10/10/2025 12:00 am
+🕒 scheduler timer</msg>
+<var>${text_lower}</var>
+<arg>${text}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.059642" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🪶 Checking card text: ${text_lower}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.060642" elapsed="0.000346"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text_lower}</arg>
+<arg>scheduled</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.060988" elapsed="0.000000"/>
+</kw>
+<msg time="2025-11-05T17:31:42.060988" level="INFO">${contains} = True</msg>
+<var>${contains}</var>
+<arg>Should Contain</arg>
+<arg>${text_lower}</arg>
+<arg>scheduled</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.060988" elapsed="0.001037"/>
+</kw>
+<if>
+<branch type="IF" condition="${contains}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ YES – this card contains 'scheduled'</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.062025" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:42.062025" level="INFO">Clicking element 'xpath=//*[@id="reports"]/div/div/button'.</msg>
+<arg>xpath=//*[@id="reports"]/div/div/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.062025" elapsed="0.107702"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:47.171569" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:42.171238" elapsed="5.000331"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SCHEDULER_POPUP}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.171569" elapsed="0.030893"/>
+</kw>
+<kw name="Extract Scheduler Popup Data" owner="reports_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🧠 Extracting scheduler popup data...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.202462" elapsed="0.001000"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:47.217990" level="INFO">${inputs} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.15")&gt;, &lt;selenium.webdriv...</msg>
+<var>${inputs}</var>
+<arg>${SCHEDULER_INPUTS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.203462" elapsed="0.014528"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:47.218992" level="INFO">${row_data} = []</msg>
+<var>${row_data}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.218992" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:47.236299" level="INFO">${val} = Geofence Exception Report demo</msg>
+<var>${val}</var>
+<arg>${inp}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.218992" elapsed="0.017307"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:47.237302" level="INFO">${val} = Geofence Exception Report demo</msg>
+<var>${val}</var>
+<arg>${val}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.237302" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${row_data}</arg>
+<arg>${val}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.237302" elapsed="0.000000"/>
+</kw>
+<var name="${inp}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.15")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:47.218992" elapsed="0.018310"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:47.251295" level="INFO">${val} = mike@argotrak.com</msg>
+<var>${val}</var>
+<arg>${inp}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.238300" elapsed="0.012995"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:47.252294" level="INFO">${val} = mike@argotrak.com</msg>
+<var>${val}</var>
+<arg>${val}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.251295" elapsed="0.000999"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${row_data}</arg>
+<arg>${val}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.252294" elapsed="0.000000"/>
+</kw>
+<var name="${inp}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.16")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:47.238300" elapsed="0.013994"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:47.264568" level="INFO">${val} = Geofence Exception Report - Monthly</msg>
+<var>${val}</var>
+<arg>${inp}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.252294" elapsed="0.012274"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:47.264568" level="INFO">${val} = Geofence Exception Report - Monthly</msg>
+<var>${val}</var>
+<arg>${val}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.264568" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${row_data}</arg>
+<arg>${val}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.265566" elapsed="0.000000"/>
+</kw>
+<var name="${inp}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.17")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:47.252294" elapsed="0.013272"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:47.274537" level="INFO">${val} = English</msg>
+<var>${val}</var>
+<arg>${inp}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.265566" elapsed="0.008971"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:47.275536" level="INFO">${val} = English</msg>
+<var>${val}</var>
+<arg>${val}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.275536" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${row_data}</arg>
+<arg>${val}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.275536" elapsed="0.000000"/>
+</kw>
+<var name="${inp}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.18")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:47.265566" elapsed="0.009970"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:47.286259" level="INFO">${val} = Acrobat File (PDF)</msg>
+<var>${val}</var>
+<arg>${inp}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.276536" elapsed="0.009723"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:47.286766" level="INFO">${val} = Acrobat File (PDF)</msg>
+<var>${val}</var>
+<arg>${val}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.286259" elapsed="0.000507"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${row_data}</arg>
+<arg>${val}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.286766" elapsed="0.000000"/>
+</kw>
+<var name="${inp}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.19")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:47.275536" elapsed="0.011230"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:47.305546" level="INFO">${val} = 12:00 AM</msg>
+<var>${val}</var>
+<arg>${inp}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.286766" elapsed="0.018780"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:47.305546" level="INFO">${val} = 12:00 AM</msg>
+<var>${val}</var>
+<arg>${val}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.305546" elapsed="0.001006"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${row_data}</arg>
+<arg>${val}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.306552" elapsed="0.000000"/>
+</kw>
+<var name="${inp}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.20")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:47.286766" elapsed="0.019786"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:47.316350" level="INFO">${val} = Monthly</msg>
+<var>${val}</var>
+<arg>${inp}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.306552" elapsed="0.009798"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:47.317884" level="INFO">${val} = Monthly</msg>
+<var>${val}</var>
+<arg>${val}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.317884" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${row_data}</arg>
+<arg>${val}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.317884" elapsed="0.000000"/>
+</kw>
+<var name="${inp}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.21")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:47.306552" elapsed="0.011332"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:47.335163" level="INFO">${val} = 10/10/2025</msg>
+<var>${val}</var>
+<arg>${inp}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.318891" elapsed="0.016272"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:47.336197" level="INFO">${val} = 10/10/2025</msg>
+<var>${val}</var>
+<arg>${val}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.335163" elapsed="0.001034"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${row_data}</arg>
+<arg>${val}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.336197" elapsed="0.000000"/>
+</kw>
+<var name="${inp}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.22")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:47.317884" elapsed="0.018313"/>
+</iter>
+<var>${inp}</var>
+<value>@{inputs}</value>
+<status status="PASS" start="2025-11-05T17:31:47.218992" elapsed="0.117205"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>📋 Extracted Report Scheduler Data:</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.336197" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>→ ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.337165" elapsed="0.000000"/>
+</kw>
+<var name="${item}">Geofence Exception Report demo</var>
+<status status="PASS" start="2025-11-05T17:31:47.337165" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>→ ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.337165" elapsed="0.000999"/>
+</kw>
+<var name="${item}">mike@argotrak.com</var>
+<status status="PASS" start="2025-11-05T17:31:47.337165" elapsed="0.000999"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>→ ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.338164" elapsed="0.000000"/>
+</kw>
+<var name="${item}">Geofence Exception Report - Monthly</var>
+<status status="PASS" start="2025-11-05T17:31:47.338164" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>→ ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.339163" elapsed="0.000000"/>
+</kw>
+<var name="${item}">English</var>
+<status status="PASS" start="2025-11-05T17:31:47.339163" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>→ ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.339163" elapsed="0.000000"/>
+</kw>
+<var name="${item}">Acrobat File (PDF)</var>
+<status status="PASS" start="2025-11-05T17:31:47.339163" elapsed="0.001000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>→ ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.340163" elapsed="0.000000"/>
+</kw>
+<var name="${item}">12:00 AM</var>
+<status status="PASS" start="2025-11-05T17:31:47.340163" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>→ ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.340163" elapsed="0.000981"/>
+</kw>
+<var name="${item}">Monthly</var>
+<status status="PASS" start="2025-11-05T17:31:47.340163" elapsed="0.000981"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>→ ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.341144" elapsed="0.000000"/>
+</kw>
+<var name="${item}">10/10/2025</var>
+<status status="PASS" start="2025-11-05T17:31:47.341144" elapsed="0.000000"/>
+</iter>
+<var>${item}</var>
+<value>@{row_data}</value>
+<status status="PASS" start="2025-11-05T17:31:47.337165" elapsed="0.003979"/>
+</for>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:47.342153" level="INFO">${rows} = [['Geofence Exception Report demo', 'mike@argotrak.com', 'Geofence Exception Report - Monthly', 'English', 'Acrobat File (PDF)', '12:00 AM', 'Monthly', '10/10/2025']]</msg>
+<var>${rows}</var>
+<arg>${row_data}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.341144" elapsed="0.001009"/>
+</kw>
+<kw name="Append Rows To Sheet" owner="excel_operation">
+<msg time="2025-11-05T17:31:47.637418" level="INFO">✅ Appended 1 rows to 'Reports'</msg>
+<arg>${excel_file}</arg>
+<arg>Reports</arg>
+<arg>${rows}</arg>
+<doc>Append multiple rows to an Excel sheet.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.342153" elapsed="0.295265"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Data written successfully to Excel 'Reports' sheet.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.638419" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:47.638419" level="INFO">Clicking element 'xpath=//*[@id="schedulerPopup"]//button[contains(text(),'Close')]'.</msg>
+<arg>${SCHEDULER_CLOSE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.638419" elapsed="0.107905"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Scheduler popup closed successfully.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.747333" elapsed="0.000000"/>
+</kw>
+<arg>${excel_file}</arg>
+<status status="PASS" start="2025-11-05T17:31:47.202462" elapsed="0.544871"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2025-11-05T17:31:47.747333" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.747333" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:42.062025" elapsed="5.685308"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>❌ NO – this card does not contain 'scheduled'</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:47.747333" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:47.747333" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:42.062025" elapsed="5.685308"/>
+</if>
+<var name="${card}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.388")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:42.041643" elapsed="5.705690"/>
+</iter>
+<var>${card}</var>
+<value>@{report_cards}</value>
+<status status="PASS" start="2025-11-05T17:31:42.041643" elapsed="5.707195"/>
+</for>
+<arg>${EXCEL_FILE}</arg>
+<status status="PASS" start="2025-11-05T17:31:42.026055" elapsed="5.722783"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:48.749447" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:47.748838" elapsed="1.000609"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:48.749447" level="INFO">📋 Executing: Maintenance Manager Actions</msg>
+<arg>📋 Executing: Maintenance Manager Actions</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:48.749447" elapsed="0.000000"/>
+</kw>
+<kw name="Open Tools And Settings" owner="maintenance_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔍 Clicking Settings → Tools &amp; Settings...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:48.751459" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:48.779136" level="INFO">Element 'css:.nav-icon.settings-icon img' is displayed.</msg>
+<arg>css:.nav-icon.settings-icon img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:48.751459" elapsed="0.028229"/>
+</kw>
+<msg time="2025-11-05T17:31:48.779688" level="INFO">${is_icon} = True</msg>
+<var>${is_icon}</var>
+<arg>Element Should Be Visible</arg>
+<arg>css:.nav-icon.settings-icon img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:48.751459" elapsed="0.028229"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:48.779688" level="INFO">Clicking element 'css:.nav-icon.settings-icon img'.</msg>
+<arg>css:.nav-icon.settings-icon img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:48.779688" elapsed="0.116574"/>
+</kw>
+<arg>${is_icon}</arg>
+<arg>Click Element</arg>
+<arg>css:.nav-icon.settings-icon img</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:48.779688" elapsed="0.116574"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:49.396725" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:48.896262" elapsed="0.500463"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:49.398741" level="INFO">Clicking element 'xpath=//div[@id='settingsDropdown']//a[contains(text(),'Tools &amp; Settings')]'.</msg>
+<arg>xpath=//div[@id='settingsDropdown']//a[contains(text(),'Tools &amp; Settings')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:49.398741" elapsed="0.133581"/>
+</kw>
+<arg>${is_icon}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//div[@id='settingsDropdown']//a[contains(text(),'Tools &amp; Settings')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:49.397742" elapsed="0.134580"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:50.532703" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:49.532322" elapsed="1.000381"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Tools &amp; Settings tab opened</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:50.532703" elapsed="0.000542"/>
+</kw>
+<doc>Click on Settings icon → Tools &amp; Settings link</doc>
+<status status="PASS" start="2025-11-05T17:31:48.750492" elapsed="1.782753"/>
+</kw>
+<kw name="Open Maintenance Manager" owner="maintenance_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔍 Looking for 'Maintenance Manager' button...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:50.534250" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:50.560453" level="INFO">Element 'xpath=//*[@id='toolsSettingsTab']/div/div[1]/ul/li[1]/button' is displayed.</msg>
+<arg>xpath=//*[@id='toolsSettingsTab']/div/div[1]/ul/li[1]/button</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:50.534250" elapsed="0.026203"/>
+</kw>
+<msg time="2025-11-05T17:31:50.560453" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//*[@id='toolsSettingsTab']/div/div[1]/ul/li[1]/button</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:50.534250" elapsed="0.026203"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-11-05T17:31:50.561490" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${status}</arg>
+<arg>Log To Console</arg>
+<arg>⚠️ Maintenance Manager button not found</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-11-05T17:31:50.561490" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-11-05T17:31:50.562490" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${status}</arg>
+<arg>RETURN</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-11-05T17:31:50.562490" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:50.562490" level="INFO">Clicking element 'xpath=//*[@id='toolsSettingsTab']/div/div[1]/ul/li[1]/button'.</msg>
+<arg>xpath=//*[@id='toolsSettingsTab']/div/div[1]/ul/li[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:50.562490" elapsed="0.122035"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:51.685092" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:50.684525" elapsed="1.000567"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@id='toolsMainContent']//table</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.685092" elapsed="0.029411"/>
+</kw>
+<msg time="2025-11-05T17:31:51.714503" level="INFO">${table_visible} = True</msg>
+<var>${table_visible}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@id='toolsMainContent']//table</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.685092" elapsed="0.029411"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-11-05T17:31:51.715502" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${table_visible}</arg>
+<arg>Log To Console</arg>
+<arg>⚠️ Maintenance table did not load</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-11-05T17:31:51.715502" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-11-05T17:31:51.715502" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${table_visible}</arg>
+<arg>RETURN</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-11-05T17:31:51.715502" elapsed="0.001002"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:51.728571" level="INFO">${rows} = 3</msg>
+<var>${rows}</var>
+<arg>xpath=//div[@id='toolsMainContent']//table//tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.716504" elapsed="0.012610"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${rows} &lt;= 1</arg>
+<arg>Log To Console</arg>
+<arg>⚠️ Maintenance table not visible or empty</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.729114" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${rows} &lt;= 1</arg>
+<arg>RETURN</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.729114" elapsed="0.001011"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>📋 Extracted Maintenance Table Data:</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.730125" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:51.748281" level="INFO">${cols} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.410")&gt;, &lt;selenium.webdri...</msg>
+<var>${cols}</var>
+<arg>xpath=//div[@id='toolsMainContent']//table//tr[${index}]/td</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.731125" elapsed="0.018660"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:51.749785" level="INFO">${data} = []</msg>
+<var>${data}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.749785" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:51.766904" level="INFO">${text} = Op 1</msg>
+<var>${text}</var>
+<arg>${cell}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.750787" elapsed="0.016117"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-11-05T17:31:51.766904" level="INFO">${text} = Op 1</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<arg>\n</arg>
+<arg>${SPACE}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.766904" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:51.768411" level="INFO">${text} = Op 1</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.766904" elapsed="0.001507"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${data}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.768478" elapsed="0.000505"/>
+</kw>
+<arg>'${text}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${data}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.768478" elapsed="0.000505"/>
+</kw>
+<var name="${cell}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.410")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:51.749785" elapsed="0.019198"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:51.778556" level="INFO">${text} = Dummy description 1</msg>
+<var>${text}</var>
+<arg>${cell}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.768983" elapsed="0.009573"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-11-05T17:31:51.779560" level="INFO">${text} = Dummy description 1</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<arg>\n</arg>
+<arg>${SPACE}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.779560" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:51.779560" level="INFO">${text} = Dummy description 1</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.779560" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${data}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.780561" elapsed="0.000000"/>
+</kw>
+<arg>'${text}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${data}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.779560" elapsed="0.001001"/>
+</kw>
+<var name="${cell}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.411")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:51.768983" elapsed="0.011578"/>
+</iter>
+<var>${cell}</var>
+<value>@{cols}</value>
+<status status="PASS" start="2025-11-05T17:31:51.749785" elapsed="0.030776"/>
+</for>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-05T17:31:51.780561" level="INFO">Length is 2.</msg>
+<msg time="2025-11-05T17:31:51.780561" level="INFO">${data_length} = 2</msg>
+<var>${data_length}</var>
+<arg>${data}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.780561" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.781561" elapsed="0.000000"/>
+</kw>
+<arg>${data_length} &gt; 0</arg>
+<arg>Log To Console</arg>
+<arg>${data}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.780561" elapsed="0.001000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:51.781561" level="INFO">${row_list} = [['Op 1', 'Dummy description 1']]</msg>
+<var>${row_list}</var>
+<arg>${data}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.781561" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append Rows To Sheet" owner="excel_operation">
+<msg time="2025-11-05T17:31:52.038338" level="INFO">✅ Appended 1 rows to 'Maintenance'</msg>
+<arg>${EXCEL_FILE}</arg>
+<arg>Maintenance</arg>
+<arg>${row_list}</arg>
+<doc>Append multiple rows to an Excel sheet.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.782561" elapsed="0.255777"/>
+</kw>
+<arg>${data_length} &gt; 0</arg>
+<arg>Append Rows To Sheet</arg>
+<arg>${EXCEL_FILE}</arg>
+<arg>Maintenance</arg>
+<arg>${row_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:51.782561" elapsed="0.255777"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2025-11-05T17:31:51.731125" elapsed="0.307213"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:52.055525" level="INFO">${cols} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.412")&gt;, &lt;selenium.webdri...</msg>
+<var>${cols}</var>
+<arg>xpath=//div[@id='toolsMainContent']//table//tr[${index}]/td</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.038338" elapsed="0.017187"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:52.055525" level="INFO">${data} = []</msg>
+<var>${data}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.055525" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:52.067612" level="INFO">${text} = Op 2</msg>
+<var>${text}</var>
+<arg>${cell}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.056526" elapsed="0.011086"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-11-05T17:31:52.068649" level="INFO">${text} = Op 2</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<arg>\n</arg>
+<arg>${SPACE}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.068649" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:52.068649" level="INFO">${text} = Op 2</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.068649" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${data}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.069659" elapsed="0.000000"/>
+</kw>
+<arg>'${text}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${data}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.068649" elapsed="0.001010"/>
+</kw>
+<var name="${cell}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.412")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:52.056526" elapsed="0.013133"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:52.084872" level="INFO">${text} = Dummy description 2</msg>
+<var>${text}</var>
+<arg>${cell}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.069659" elapsed="0.015213"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-11-05T17:31:52.084872" level="INFO">${text} = Dummy description 2</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<arg>\n</arg>
+<arg>${SPACE}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.084872" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:52.085872" level="INFO">${text} = Dummy description 2</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.085872" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${data}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.085872" elapsed="0.000000"/>
+</kw>
+<arg>'${text}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${data}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.085872" elapsed="0.000000"/>
+</kw>
+<var name="${cell}">&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.413")&gt;</var>
+<status status="PASS" start="2025-11-05T17:31:52.069659" elapsed="0.016213"/>
+</iter>
+<var>${cell}</var>
+<value>@{cols}</value>
+<status status="PASS" start="2025-11-05T17:31:52.055525" elapsed="0.030347"/>
+</for>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-05T17:31:52.086932" level="INFO">Length is 2.</msg>
+<msg time="2025-11-05T17:31:52.086932" level="INFO">${data_length} = 2</msg>
+<var>${data_length}</var>
+<arg>${data}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.086932" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.087437" elapsed="0.000000"/>
+</kw>
+<arg>${data_length} &gt; 0</arg>
+<arg>Log To Console</arg>
+<arg>${data}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.087437" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:52.088442" level="INFO">${row_list} = [['Op 2', 'Dummy description 2']]</msg>
+<var>${row_list}</var>
+<arg>${data}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.087437" elapsed="0.001005"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append Rows To Sheet" owner="excel_operation">
+<msg time="2025-11-05T17:31:52.390260" level="INFO">✅ Appended 1 rows to 'Maintenance'</msg>
+<arg>${EXCEL_FILE}</arg>
+<arg>Maintenance</arg>
+<arg>${row_list}</arg>
+<doc>Append multiple rows to an Excel sheet.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.088442" elapsed="0.301818"/>
+</kw>
+<arg>${data_length} &gt; 0</arg>
+<arg>Append Rows To Sheet</arg>
+<arg>${EXCEL_FILE}</arg>
+<arg>Maintenance</arg>
+<arg>${row_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.088442" elapsed="0.302818"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2025-11-05T17:31:52.038338" elapsed="0.352922"/>
+</iter>
+<var>${index}</var>
+<value>2</value>
+<value>${rows}+1</value>
+<status status="PASS" start="2025-11-05T17:31:51.731125" elapsed="0.660135"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Maintenance data written to Excel sheet</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.391260" elapsed="0.001009"/>
+</kw>
+<arg>${EXCEL_FILE}</arg>
+<doc>Click “Maintenance Manager” and extract table data</doc>
+<status status="PASS" start="2025-11-05T17:31:50.533245" elapsed="1.859024"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:53.392542" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:52.392269" elapsed="1.000273"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:53.393078" level="INFO">📋 Executing: Credentials Manager Actions</msg>
+<arg>📋 Executing: Credentials Manager Actions</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:53.392542" elapsed="0.000536"/>
+</kw>
+<kw name="Open Tools And Settings Credentials" owner="credential_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔍 Clicking Settings → Tools &amp; Settings...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:53.393078" elapsed="0.001007"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:53.420382" level="INFO">Element 'css:.nav-icon.settings-icon img' is displayed.</msg>
+<arg>css:.nav-icon.settings-icon img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:53.394085" elapsed="0.026297"/>
+</kw>
+<msg time="2025-11-05T17:31:53.420382" level="INFO">${is_icon} = True</msg>
+<var>${is_icon}</var>
+<arg>Element Should Be Visible</arg>
+<arg>css:.nav-icon.settings-icon img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:53.394085" elapsed="0.026297"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:53.420382" level="INFO">Clicking element 'css:.nav-icon.settings-icon img'.</msg>
+<arg>css:.nav-icon.settings-icon img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:53.420382" elapsed="0.083782"/>
+</kw>
+<arg>${is_icon}</arg>
+<arg>Click Element</arg>
+<arg>css:.nav-icon.settings-icon img</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:53.420382" elapsed="0.083782"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:54.004797" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:53.504164" elapsed="0.500633"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:54.005806" level="INFO">Clicking element 'xpath=//div[@id='settingsDropdown']//a[contains(text(),'Tools &amp; Settings')]'.</msg>
+<arg>xpath=//div[@id='settingsDropdown']//a[contains(text(),'Tools &amp; Settings')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:54.004797" elapsed="0.102761"/>
+</kw>
+<arg>${is_icon}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//div[@id='settingsDropdown']//a[contains(text(),'Tools &amp; Settings')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:31:54.004797" elapsed="0.102761"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:55.109094" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:54.107558" elapsed="1.001536"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Tools &amp; Settings tab opened</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:55.109635" elapsed="0.000000"/>
+</kw>
+<doc>Click on Settings icon → Tools &amp; Settings link</doc>
+<status status="PASS" start="2025-11-05T17:31:53.393078" elapsed="1.716557"/>
+</kw>
+<kw name="Open Manage User Group Access" owner="credential_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔍 Clicking 'Security Tools' → 'Manage User Group Access' link...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:55.110671" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:55.141677" level="INFO">Element 'xpath=//*[@id='toolsSettingsTab']//button[contains(text(),'Security Tools')]' is displayed.</msg>
+<arg>xpath=//*[@id='toolsSettingsTab']//button[contains(text(),'Security Tools')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:55.112643" elapsed="0.029034"/>
+</kw>
+<msg time="2025-11-05T17:31:55.142672" level="INFO">${sec_visible} = True</msg>
+<var>${sec_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//*[@id='toolsSettingsTab']//button[contains(text(),'Security Tools')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:55.111642" elapsed="0.031030"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-11-05T17:31:55.142672" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${sec_visible}</arg>
+<arg>Log To Console</arg>
+<arg>⚠️ Security Tools button not visible</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-11-05T17:31:55.142672" elapsed="0.000999"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-11-05T17:31:55.143671" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${sec_visible}</arg>
+<arg>RETURN</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-11-05T17:31:55.143671" elapsed="0.001000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:55.145672" level="INFO">Clicking element 'xpath=//*[@id='toolsSettingsTab']//button[contains(text(),'Security Tools')]'.</msg>
+<arg>xpath=//*[@id='toolsSettingsTab']//button[contains(text(),'Security Tools')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:55.144671" elapsed="0.105944"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:55.750876" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:55.250615" elapsed="0.500261"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:55.778330" level="INFO">Element 'xpath=//*[@id='toolsMainContent']/p/a[contains(text(),'Manage User Group Access')]' is displayed.</msg>
+<arg>xpath=//*[@id='toolsMainContent']/p/a[contains(text(),'Manage User Group Access')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:55.750876" elapsed="0.027454"/>
+</kw>
+<msg time="2025-11-05T17:31:55.778330" level="INFO">${manage_visible} = True</msg>
+<var>${manage_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//*[@id='toolsMainContent']/p/a[contains(text(),'Manage User Group Access')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:55.750876" elapsed="0.027454"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-11-05T17:31:55.778330" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${manage_visible}</arg>
+<arg>Log To Console</arg>
+<arg>⚠️ Manage User Group Access link not found</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-11-05T17:31:55.778330" elapsed="0.001186"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-11-05T17:31:55.780021" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${manage_visible}</arg>
+<arg>RETURN</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-11-05T17:31:55.780021" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:55.781027" level="INFO">Clicking element 'xpath=//*[@id='toolsMainContent']/p/a[contains(text(),'Manage User Group Access')]'.</msg>
+<arg>xpath=//*[@id='toolsMainContent']/p/a[contains(text(),'Manage User Group Access')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:55.780021" elapsed="0.149623"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:56.931289" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:55.930640" elapsed="1.000649"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Manage User Group Access opened</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.931289" elapsed="0.001011"/>
+</kw>
+<arg>${EXCEL_FILE}</arg>
+<doc>Open “Manage User Group Access” under Security Tools and extract credentials info</doc>
+<status status="PASS" start="2025-11-05T17:31:55.110671" elapsed="1.821629"/>
+</kw>
+<kw name="Extract Credentials Data" owner="credential_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@id='credentials']//table</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.933332" elapsed="0.028233"/>
+</kw>
+<msg time="2025-11-05T17:31:56.961565" level="INFO">${table_visible} = True</msg>
+<var>${table_visible}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@id='credentials']//table</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.932300" elapsed="0.029265"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-11-05T17:31:56.961565" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${table_visible}</arg>
+<arg>Log To Console</arg>
+<arg>⚠️ Credentials table did not load</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-11-05T17:31:56.961565" elapsed="0.000999"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-11-05T17:31:56.962564" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<arg>${table_visible}</arg>
+<arg>RETURN</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2025-11-05T17:31:56.962564" elapsed="0.001000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔍 Extracting Credentials data...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.963564" elapsed="0.000000"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:56.975081" level="INFO">${rows} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="111ac24cfbd808cd98a4716317a2fc48", element="f.9E5DAB1259456717C40B55DD301D31D2.d.DC7887C00900E7E39373A1183E2AA50C.e.418")&gt;, &lt;selenium.webdri...</msg>
+<var>${rows}</var>
+<arg>xpath=//div[@id='credentials']//table//tr</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.963564" elapsed="0.011517"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:56.976080" level="INFO">${table_data} = []</msg>
+<var>${table_data}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.976080" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>number of rows:${rows}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.976080" elapsed="0.000000"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-05T17:31:56.977590" level="INFO">Length is 4.</msg>
+<msg time="2025-11-05T17:31:56.977590" level="INFO">${row_count} = 4</msg>
+<var>${row_count}</var>
+<arg>${rows}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.977590" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>number of rows:${row_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.977590" elapsed="0.001025"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:56.998870" level="INFO">${col_count} = 2</msg>
+<var>${col_count}</var>
+<arg>xpath=(//div[@id='credentials']//table//tr)[${index}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.979615" elapsed="0.019255"/>
+</kw>
+<if>
+<branch type="IF" condition="${col_count} == 2">
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:57.030115" level="INFO">${value} = Harry Johnson</msg>
+<var>${value}</var>
+<arg>xpath=(//div[@id='credentials']//table//tr)[${index}]/td[2]/input</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:56.998870" elapsed="0.031245"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-11-05T17:31:57.030115" level="INFO">${value} = Harry Johnson</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.030115" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:57.031122" level="INFO">${value} = Harry Johnson</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.030115" elapsed="0.001007"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${table_data}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.031122" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:56.998870" elapsed="0.032252"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:56.998870" elapsed="0.032252"/>
+</if>
+<var name="${index}">1</var>
+<status status="PASS" start="2025-11-05T17:31:56.978615" elapsed="0.052507"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:57.045152" level="INFO">${col_count} = 2</msg>
+<var>${col_count}</var>
+<arg>xpath=(//div[@id='credentials']//table//tr)[${index}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.031122" elapsed="0.014030"/>
+</kw>
+<if>
+<branch type="IF" condition="${col_count} == 2">
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:57.075505" level="INFO">${value} = harry_j</msg>
+<var>${value}</var>
+<arg>xpath=(//div[@id='credentials']//table//tr)[${index}]/td[2]/input</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.046149" elapsed="0.030358"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-11-05T17:31:57.077503" level="INFO">${value} = harry_j</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.076507" elapsed="0.000996"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:57.078040" level="INFO">${value} = harry_j</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.078040" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${table_data}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.078040" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:57.045152" elapsed="0.032888"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:57.045152" elapsed="0.032888"/>
+</if>
+<var name="${index}">2</var>
+<status status="PASS" start="2025-11-05T17:31:57.031122" elapsed="0.046918"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:57.092110" level="INFO">${col_count} = 2</msg>
+<var>${col_count}</var>
+<arg>xpath=(//div[@id='credentials']//table//tr)[${index}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.079046" elapsed="0.013064"/>
+</kw>
+<if>
+<branch type="IF" condition="${col_count} == 2">
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:57.123499" level="INFO">${value} = charterboat_123</msg>
+<var>${value}</var>
+<arg>xpath=(//div[@id='credentials']//table//tr)[${index}]/td[2]/input</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.093147" elapsed="0.030352"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-11-05T17:31:57.123499" level="INFO">${value} = charterboat_123</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.123499" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:57.123499" level="INFO">${value} = charterboat_123</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.123499" elapsed="0.000998"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${table_data}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.124497" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:57.093147" elapsed="0.031350"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:57.093147" elapsed="0.031350"/>
+</if>
+<var name="${index}">3</var>
+<status status="PASS" start="2025-11-05T17:31:57.078040" elapsed="0.046457"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:57.137280" level="INFO">${col_count} = 2</msg>
+<var>${col_count}</var>
+<arg>xpath=(//div[@id='credentials']//table//tr)[${index}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.124497" elapsed="0.012783"/>
+</kw>
+<if>
+<branch type="IF" condition="${col_count} == 2">
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-11-05T17:31:57.160213" level="INFO">${value} = charter boats</msg>
+<var>${value}</var>
+<arg>xpath=(//div[@id='credentials']//table//tr)[${index}]/td[2]/input</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.137785" elapsed="0.022428"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-11-05T17:31:57.160213" level="INFO">${value} = charter boats</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.160213" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-11-05T17:31:57.161216" level="INFO">${value} = charter boats</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.160213" elapsed="0.001003"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${table_data}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.161216" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:57.137280" elapsed="0.023936"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:57.137280" elapsed="0.023936"/>
+</if>
+<var name="${index}">4</var>
+<status status="PASS" start="2025-11-05T17:31:57.124497" elapsed="0.036719"/>
+</iter>
+<var>${index}</var>
+<value>1</value>
+<value>${row_count}+1</value>
+<status status="PASS" start="2025-11-05T17:31:56.978615" elapsed="0.182601"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>📋 Extracted Form Table Values: ${table_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.161216" elapsed="0.001007"/>
+</kw>
+<kw name="Extract Checked Tree Labels" owner="credentials_checkbox_tree">
+<msg time="2025-11-05T17:31:57.211425" level="INFO">${checked_labels} = Charter Boats, Double Sunshine, Rental Boats</msg>
+<var>${checked_labels}</var>
+<status status="PASS" start="2025-11-05T17:31:57.162223" elapsed="0.049202"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>📋 Checked Items: ${checked_labels}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.211425" elapsed="0.000823"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-05T17:31:57.212248" level="INFO">${safe_table_data} = ['Harry Johnson', 'harry_j', 'charterboat_123', 'charter boats']</msg>
+<var>${safe_table_data}</var>
+<arg>[str(x).strip() for x in @{table_data}]</arg>
+<arg>modules=builtins</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.212248" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:57.212248" level="INFO">${row_data} = ['Harry Johnson', 'harry_j', 'charterboat_123', 'charter boats', 'Charter Boats, Double Sunshine, Rental Boats']</msg>
+<var>${row_data}</var>
+<arg>@{table_data}</arg>
+<arg>${checked_labels}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.212248" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-05T17:31:57.213255" level="INFO">${rows_to_add} = [['Harry Johnson', 'harry_j', 'charterboat_123', 'charter boats', 'Charter Boats, Double Sunshine, Rental Boats']]</msg>
+<var>${rows_to_add}</var>
+<arg>${row_data}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.213255" elapsed="0.000000"/>
+</kw>
+<kw name="Append Rows To Sheet" owner="excel_operation">
+<msg time="2025-11-05T17:31:57.468246" level="INFO">✅ Appended 1 rows to 'Credentials'</msg>
+<arg>${EXCEL_FILE}</arg>
+<arg>Credentials</arg>
+<arg>${rows_to_add}</arg>
+<doc>Append multiple rows to an Excel sheet.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.213255" elapsed="0.254991"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Credentials data written to Excel</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.468246" elapsed="0.000968"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Credentials data written to Excel 'Credentials' sheet (checked only)</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.469214" elapsed="0.000000"/>
+</kw>
+<arg>${EXCEL_FILE}</arg>
+<arg>${driver}</arg>
+<doc>Extract user credentials + checked permissions and write to Excel safely</doc>
+<status status="PASS" start="2025-11-05T17:31:56.932300" elapsed="0.536914"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-05T17:31:58.469441" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-05T17:31:57.469214" elapsed="1.000227"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:58.469441" level="INFO">✅ All UI actions completed successfully.</msg>
+<arg>✅ All UI actions completed successfully.</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:58.469441" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:21.020803" elapsed="37.449679"/>
+</branch>
+<branch type="EXCEPT" assign="${error}">
+<kw name="Log Error" owner="logger_library">
+<arg>❌ Exception occurred during Call Multiple UI Functions: ${error}</arg>
+<doc>Log error message.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:58.470482" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:58.470482" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔥 Exception captured during Call Multiple UI Functions: ${error}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-11-05T17:31:58.470482" elapsed="0.000000"/>
+</kw>
+<kw name="Append Error To Excel">
+<arg>${EXCEL_FILE}</arg>
+<arg>CallMultipleUI</arg>
+<arg>${error}</arg>
+<status status="NOT RUN" start="2025-11-05T17:31:58.470482" elapsed="0.000967"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:31:58.470482" elapsed="0.000967"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:58.471449" level="INFO">🧹 Completed Call Multiple UI Functions (Cleanup Phase)</msg>
+<arg>🧹 Completed Call Multiple UI Functions (Cleanup Phase)</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:58.471449" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:58.471449" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:21.020261" elapsed="37.451188"/>
+</try>
+<arg>${EXCEL_FILE}</arg>
+<arg>${driver}</arg>
+<doc>Executes all UI functional flows with exception handling and logging.</doc>
+<status status="PASS" start="2025-11-05T17:31:21.020261" elapsed="37.451188"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:31:58.471449" level="INFO">🌍 Logging into NewGate</msg>
+<arg>🌍 Logging into NewGate</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:31:58.471449" elapsed="0.000997"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Login To Agrotrak" owner="ui_common">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🔹 Logging into site: ${url}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:31:58.473472" elapsed="0.001073"/>
+</kw>
+<kw name="Open Login" owner="ui_function">
+<msg time="2025-11-05T17:31:58.474545" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html'.</msg>
+<msg time="2025-11-05T17:32:02.366139" level="INFO">Typing text 'admin_newgate' into text field 'id:username'.</msg>
+<msg time="2025-11-05T17:32:02.380000" level="INFO">🌐 Opening URL: file:///C:/Users/vishakhajad/Desktop/ArgoTrak_Project/Agrotrak_Python_Robot_Project/templates/dummy_templates.html
+ℹ️ No login form found (dummy page). Skipping login.</msg>
+<msg time="2025-11-05T17:32:02.380000" level="INFO">${driver} = &lt;SeleniumLibrary.SeleniumLibrary object at 0x0000028DF5090610&gt;</msg>
+<var>${driver}</var>
+<arg>${url}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Opens the given URL in a browser and performs login.
+Uses the SAME SeleniumLibrary instance that Robot Framework is using.</doc>
+<status status="PASS" start="2025-11-05T17:31:58.474545" elapsed="3.905455"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Browser opened and login (if any) attempted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-05T17:32:02.380000" elapsed="0.001006"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-11-05T17:32:02.381006" level="INFO">${driver} = &lt;SeleniumLibrary.SeleniumLibrary object at 0x0000028DF5090610&gt;</msg>
+<arg>${driver}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-11-05T17:32:02.381006" elapsed="0.000000"/>
+</kw>
+<arg>${envs['newgate']['newgate_url']}</arg>
+<arg>${envs['newgate']['newgate_username']}</arg>
+<arg>${envs['newgate']['newgate_password']}</arg>
+<status status="PASS" start="2025-11-05T17:31:58.472446" elapsed="3.908560"/>
+</kw>
+<msg time="2025-11-05T17:32:02.381006" level="INFO">${status2} = True</msg>
+<var>${status2}</var>
+<arg>Login To Agrotrak</arg>
+<arg>${envs['newgate']['newgate_url']}</arg>
+<arg>${envs['newgate']['newgate_username']}</arg>
+<arg>${envs['newgate']['newgate_password']}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-05T17:31:58.472446" elapsed="3.908560"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>not ${status2}</arg>
+<arg>Log Error</arg>
+<arg>❌ NewGate login failed!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:32:02.381006" elapsed="0.000999"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:32:02.382005" level="INFO">✅ NewGate login successful.</msg>
+<arg>✅ NewGate login successful.</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:32:02.382005" elapsed="0.000000"/>
+</kw>
+<arg>${status2}</arg>
+<arg>Log Info</arg>
+<arg>✅ NewGate login successful.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-05T17:32:02.382005" elapsed="0.000000"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:32:02.383081" level="INFO">===== Test Suite Completed Successfully =====</msg>
+<arg>===== Test Suite Completed Successfully =====</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:32:02.382005" elapsed="0.001076"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:31:02.954548" elapsed="59.428533"/>
+</branch>
+<branch type="EXCEPT" assign="${error}">
+<kw name="Log Error" owner="logger_library">
+<arg>❌ Exception caught during Run Multiple Environments: ${error}</arg>
+<doc>Log error message.</doc>
+<status status="NOT RUN" start="2025-11-05T17:32:02.383081" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-11-05T17:32:02.383585" elapsed="0.000000"/>
+</kw>
+<kw name="Append Error To Excel">
+<arg>${EXCEL_FILE}</arg>
+<arg>RunMultipleEnv</arg>
+<arg>${error}</arg>
+<status status="NOT RUN" start="2025-11-05T17:32:02.383585" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>🚨 Exception: ${error}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-11-05T17:32:02.383585" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-11-05T17:32:02.383081" elapsed="0.000504"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:32:02.384590" level="INFO">🧹 Cleaning up and closing browsers</msg>
+<arg>🧹 Cleaning up and closing browsers</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:32:02.383585" elapsed="0.001005"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-11-05T17:32:02.384590" elapsed="9.738241"/>
+</kw>
+<kw name="Log Info" owner="logger_library">
+<msg time="2025-11-05T17:32:12.123863" level="INFO">===== Suite Execution Ended =====</msg>
+<arg>===== Suite Execution Ended =====</arg>
+<doc>Log informational message.</doc>
+<status status="PASS" start="2025-11-05T17:32:12.122831" elapsed="0.001032"/>
+</kw>
+<status status="PASS" start="2025-11-05T17:32:02.383585" elapsed="9.740278"/>
+</branch>
+<status status="PASS" start="2025-11-05T17:31:02.954548" elapsed="69.169315"/>
+</try>
+<doc>Loads configurations, executes full end-to-end AgroTrak + NewGate workflow.</doc>
+<status status="PASS" start="2025-11-05T17:31:02.954548" elapsed="69.169315"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-11-05T17:32:12.125829" elapsed="0.000000"/>
+</kw>
+<doc>🚜 AgroTrak – Full Automation Suite (With File Logging &amp; Exception Handling)</doc>
+<status status="PASS" start="2025-11-05T17:31:02.038964" elapsed="70.086865"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Main Suite" id="s1" pass="1" fail="0" skip="0">Main Suite</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-11-05T17:31:50.561490" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-11-05T17:31:50.562490" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-11-05T17:31:51.715502" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-11-05T17:31:51.715502" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-11-05T17:31:55.142672" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-11-05T17:31:55.143671" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-11-05T17:31:55.778330" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-11-05T17:31:55.780021" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-11-05T17:31:56.961565" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2025-11-05T17:31:56.962564" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+</errors>
+</robot>

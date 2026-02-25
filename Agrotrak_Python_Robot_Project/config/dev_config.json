@@ -1,0 +1,10 @@
+{
+    "browser": "chrome",
+    "implicit_wait": 5,
+    "locator_files": {
+      "argotrak": "../pageobjects/argotrak_locators.json",
+      "newgate": "../pageobjects/newgate_locators.json"
+    }
+  }
+
+  
